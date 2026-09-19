@@ -1,7 +1,7 @@
-// Portfolio Data Configuration for 3rd Semester CS Student - Abdullah Pervaiz
+// Portfolio Data Configuration for 3rd Semester CS Student - Muhammad Shahzad
 window.PORTFOLIO_DATA = {
   personal: {
-    name: "Muhammad shahzad",
+    name: "Muhammad Shahzad",
     title: "Software Engineering & CS Undergrad",
     semester: "3rd Semester Undergrad",
     status: "Exploring Systems, DSA & Full-Stack Development",
@@ -427,11 +427,11 @@ async function queryExternalService(endpoint, payload) {
 
   terminalCommands: {
     help: "Available commands:\n  • whoami      : Display developer profile & status\n  • skills      : List core technical competencies\n  • projects    : Show selected featured projects\n  • dsa         : Display DSA progress & topics mastered\n  • contact     : Show email, phone & social links\n  • matrix      : Trigger digital cyber rain animation\n  • clear       : Clear the terminal screen\n  • sudo hire   : Request interview / collaboration",
-    whoami: "Abdullah Pervaiz\nRole: 3rd Semester CS Undergrad | Software Engineering\nCore Stack: Python, C++, TypeScript, SQL, Angular, DSA, APIs, Firebase\nMission: Building high-performance, privacy-first software and robust web applications.",
+    whoami: "Muhammad Shahzad\nRole: 3rd Semester CS Undergrad | Software Engineering\nCore Stack: Python, C++, TypeScript, SQL, Angular, DSA, APIs, Firebase\nMission: Building high-performance, privacy-first software and robust web applications.",
     skills: "TECHNICAL STACK:\n- Languages: C++, Python, TypeScript, SQL, HTML5, CSS3\n- Frameworks: Angular Framework, React, Firebase\n- Core: Data Structures & Algorithms (Trees, Graphs, DP), OOP, REST APIs, Chrome Extensions (MV3)",
     projects: "FEATURED HIGHLIGHTS:\n1. OmniConvertor [PDF to IMG, IMG to PDF, Firebase, Client-Side]\n2. Python AI Chatbot [REST API Integration & NLP]\n3. Website Notes Chrome Extension [Manifest V3 & Local Storage]\n4. Interactive DSA Visualizer [React + Generators]\nVisit projects section for live demos and links.",
     dsa: "DSA PROGRESS TRACKER:\n- Arrays & Strings: Mastered\n- Linked Lists, Stacks, Queues: Mastered\n- Binary Trees, BSTs, Heaps: Mastered\n- Graphs (BFS, DFS, Dijkstra): In Progress\n- Dynamic Programming: In Progress (Memoization & Tabulation)",
-    contact: "REACH OUT:\n- Name: Abdullah Pervaiz\n- Phone: 03138977582\n- Email: abdullahpervaiz194@gmail.com\n- GitHub: https://github.com/abdullahpervaiz194-del/\n- LinkedIn: https://www.linkedin.com/in/abdullah-pervaiz-2b95902ab",
+    contact: "REACH OUT:\n- Name: Muhammad Shahzad\n- Phone: 03138977582\n- Email: abdullahpervaiz194@gmail.com\n- GitHub: https://github.com/abdullahpervaiz194-del/\n- LinkedIn: https://www.linkedin.com/in/abdullah-pervaiz-2b95902ab",
     "sudo hire": "ACCESS GRANTED! 🎉\nCandidate status: HIGHLY MOTIVATED & FAST LEARNER.\nReady for internships and collaborative software projects. Let's build something remarkable!"
   }
 };

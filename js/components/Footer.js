@@ -14,11 +14,11 @@ function Footer() {
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-400 p-[1px]">
               <div className="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center font-mono font-bold text-xs text-cyan-300">
-                AP
+                MS
               </div>
             </div>
             <div>
-              <span className="text-sm font-bold text-slate-100">Abdullah Pervaiz</span>
+              <span className="text-sm font-bold text-slate-100">Muhammad Shahzad</span>
               <p className="text-[11px] text-slate-400 font-mono">
                 Computer Science & Engineering • Semester 3
               </p>
@@ -49,7 +49,7 @@ function Footer() {
 
         <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
           <span>
-            © {new Date().getFullYear()} Abdullah Pervaiz. Built with React, Tailwind & Pure Algorithms.
+            © {new Date().getFullYear()} Muhammad Shahzad. Built with React, Tailwind & Pure Algorithms.
           </span>
           <div className="flex items-center gap-4 text-[11px] font-mono">
             <span>C++</span>
