@@ -10,7 +10,7 @@ A dark-mode glassmorphic developer portfolio built with **React**, **Tailwind CS
 - **GitHub Profile**: [github.com/abdullahpervaiz194-del](https://github.com/abdullahpervaiz194-del/)
 - **Repository**: [github.com/abdullahpervaiz194-del/-my-portfolio](https://github.com/abdullahpervaiz194-del/-my-portfolio)
 - **LinkedIn**: [linkedin.com/in/abdullah-pervaiz-2b95902ab](https://www.linkedin.com/in/abdullah-pervaiz-2b95902ab)
-- **Contact**: `abdullahpervaiz194@gmail.com` | `03138977582`
+- **Contact**: `muhammadshahzadahmed679@gmail.com` | `03199554837`
 
 ---
 
