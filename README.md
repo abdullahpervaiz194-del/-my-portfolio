@@ -2,9 +2,6 @@
 
 A dark-mode glassmorphic developer portfolio built with **React**, **Tailwind CSS**, and **JavaScript**, customized for **Abdullah Pervaiz** — a 3rd-semester Computer Science undergraduate specializing in **Python, DSA, C++, TypeScript, SQL, HTML/CSS, Angular Framework, Firebase, and API Integration**.
 
-![Portfolio Preview Banner](https://raw.githubusercontent.com/abdullahpervaiz194-del/my-new-website/main/preview.png)
-
----
 
 ## 🚀 Live Demo & Repository
 - **GitHub Profile**: [github.com/abdullahpervaiz194-del](https://github.com/abdullahpervaiz194-del/)
