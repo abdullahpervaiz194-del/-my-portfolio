@@ -56,34 +56,3 @@ A dark-mode glassmorphic developer portfolio built with **React**, **Tailwind CS
 | **Browser Extensions** | Chrome Extensions API (Manifest V3), `chrome.storage.local` |
 | **Computer Science Core** | Data Structures & Algorithms (Trees, Graphs, DP, Heaps), OOP |
 
----
-
-## 💻 Getting Started Locally
-
-This portfolio is engineered to run seamlessly **without requiring any package installation or build steps**:
-
-### Option 1: 1-Click Launch (Windows)
-Double-click `run_portfolio.bat`. It will start a local HTTP server and automatically open the website at `http://localhost:3000`.
-
-### Option 2: Direct Browser Open
-Simply double-click `index.html` to open it in Chrome, Edge, or Firefox.
-
-### Option 3: Terminal Command
-```bash
-# Clone the repository
-git clone https://github.com/abdullahpervaiz194-del/-my-portfolio.git
-cd -my-portfolio
-
-# Start local server
-python -m http.server 3000
-```
-Then navigate to `http://localhost:3000` in your web browser.
-
----
-
-## 📄 License
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-Developed by **Abdullah Pervaiz** • 3rd Semester Computer Science Undergrad
