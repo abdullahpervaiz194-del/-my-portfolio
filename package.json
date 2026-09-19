@@ -1,0 +1,22 @@
+{
+  "name": "tauseef-noor-portfolio",
+  "version": "1.0.0",
+  "description": "Interactive Portfolio for Tauseef Noor - 3rd Semester CS Undergrad",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "start": "python -m http.server 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "dsa",
+    "cpp",
+    "python",
+    "angular",
+    "typescript",
+    "sql",
+    "api-integration"
+  ],
+  "author": "Tauseef Noor",
+  "license": "MIT"
+}

@@ -1,0 +1,3280 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah Pervaiz | 3rd Sem CS Undergrad &amp; Software Developer</title>
+  <meta name="description" content="Portfolio of Abdullah Pervaiz - 3rd-Semester Computer Science student specialized in Python, Data Structures & Algorithms, C++, TypeScript, SQL, Angular Framework, and API Integration.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- React 18 & ReactDOM 18 CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- Babel Standalone -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-[#090d16] text-slate-100 antialiased selection:bg-indigo-500/30 selection:text-white min-h-screen">
+
+  <!-- React Mount Point -->
+  <div id="root"></div>
+
+  <!-- Data & Utilities -->
+  <script>
+// Portfolio Data Configuration for 3rd Semester CS Student - Abdullah Pervaiz
+window.PORTFOLIO_DATA = {
+  personal: {
+    name: "Abdullah Pervaiz",
+    title: "Software Engineering & CS Undergrad",
+    semester: "3rd Semester Undergrad",
+    status: "Exploring Systems, DSA & Full-Stack Development",
+    bio: "Passionate 3rd-semester Computer Science student bridging strong low-level computing foundations in C++ and Python with modern web engineering in TypeScript, Angular, and API architectures. Actively mastering Data Structures & Algorithms, database schema optimization, and privacy-first client-side web tools.",
+    location: "Available Globally / Remote",
+    email: "abdullahpervaiz194@gmail.com",
+    phone: "03138977582",
+    github: "https://github.com/abdullahpervaiz194-del/",
+    linkedin: "https://www.linkedin.com/in/abdullah-pervaiz-2b95902ab",
+    leetcode: "https://leetcode.com",
+    stats: [
+      { label: "DSA Problems Solved", value: "250+", detail: "Arrays, Trees, Graphs, DP" },
+      { label: "Semester Focus", value: "3rd Sem", detail: "CS & Systems Track" },
+      { label: "Core Technologies", value: "8+", detail: "C++, Python, TS, Angular, SQL" },
+      { label: "Live Deployments", value: "10+", detail: "Web, Extensions & Systems" }
+    ]
+  },
+
+  skills: [
+    {
+      category: "Languages & Low-Level",
+      icon: "Code2",
+      description: "Foundational programming with memory awareness and strong type safety",
+      items: [
+        {
+          name: "C++",
+          level: "Intermediate",
+          badge: "OOP & Systems",
+          experience: "Pointers, Memory Mgmt, STL, Templates, OOP",
+          snippet: `// C++ STL Custom Vector & MinHeap Demo
+#include <iostream>
+#include <vector>
+#include <memory>
+#include <algorithm>
+
+template<typename T>
+class MinHeap {
+    std::vector<T> heap;
+public:
+    void insert(T val) {
+        heap.push_back(val);
+        std::push_heap(heap.begin(), heap.end(), std::greater<T>());
+    }
+    T extractMin() {
+        std::pop_heap(heap.begin(), heap.end(), std::greater<T>());
+        T top = heap.back();
+        heap.pop_back();
+        return top;
+    }
+};`
+        },
+        {
+          name: "Python",
+          level: "Proficient",
+          badge: "AI Chatbots & Scripting",
+          experience: "API Integration, Async NLP workflows, Automation, Algorithmic scripts",
+          snippet: `# Python Async AI Chatbot Service with API Integration
+import asyncio
+import aiohttp
+from typing import Dict, Any, List
+
+class AIChatbotService:
+    def __init__(self, api_key: str, endpoint: str):
+        self.api_key = api_key
+        self.endpoint = endpoint
+        self.session_history: List[Dict[str, str]] = []
+
+    async def send_message(self, user_prompt: str) -> Dict[str, Any]:
+        self.session_history.append({"role": "user", "content": user_prompt})
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "messages": self.session_history,
+            "temperature": 0.7
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.post(self.endpoint, json=payload, headers=headers) as resp:
+                data = await resp.json()
+                reply = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                self.session_history.append({"role": "assistant", "content": reply})
+                return {"reply": reply, "status": resp.status}`
+        },
+        {
+          name: "TypeScript",
+          level: "Intermediate",
+          badge: "Type Safety",
+          experience: "Generics, Strict Typing, Interfaces, Modern ESNext features",
+          snippet: `// TypeScript Generic API Client Contract
+export interface ApiResponse<T> {
+  data: T;
+  status: number;
+  timestamp: string;
+  meta?: { page: number; total: number };
+}
+
+export async function fetchWithRetry<T>(
+  url: string, 
+  retries: number = 3
+): Promise<ApiResponse<T>> {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(\`HTTP error! status: \${res.status}\`);
+      return await res.json();
+    } catch (err) {
+      if (i === retries - 1) throw err;
+    }
+  }
+  throw new Error("Max retries exceeded");
+}`
+        }
+      ]
+    },
+    {
+      category: "Frontend & Frameworks",
+      icon: "Layout",
+      description: "Modern component-driven web architectures and responsive interfaces",
+      items: [
+        {
+          name: "Angular Framework",
+          level: "Intermediate",
+          badge: "Enterprise Web",
+          experience: "Components, Dependency Injection, Services, RxJS, Directives, Routing",
+          snippet: `// Angular 17+ Standalone Component with RxJS & Signals
+import { Component, inject, signal, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-metric-feed',
+  standalone: true,
+  template: \`
+    <div class="card" *ngIf="dataSignal() as data">
+      <h3>Active Pipeline Status</h3>
+      <span class="badge">{{ data.status }}</span>
+    </div>
+  \`
+})
+export class MetricFeedComponent implements OnInit {
+  private http = inject(HttpClient);
+  dataSignal = signal<{ status: string; uptime: number } | null>(null);
+
+  ngOnInit() {
+    this.http.get('/api/telemetry').subscribe(val => this.dataSignal.set(val));
+  }
+}`
+        },
+        {
+          name: "HTML5 & Modern CSS",
+          level: "Advanced",
+          badge: "UI/UX & Layout",
+          experience: "Flexbox, CSS Grid, Glassmorphism, Animations, Semantic HTML, Responsive Web",
+          snippet: `/* Modern CSS Glassmorphism & Neon Glow */
+.glass-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);
+}`
+        },
+        {
+          name: "React & JavaScript",
+          level: "Intermediate",
+          badge: "Reactive UI",
+          experience: "Hooks (useState, useEffect, useMemo), Chrome Extension APIs (Manifest V3), Firebase",
+          snippet: `// Chrome Extension Manifest V3 Local Storage Handler
+// Removes URL fragments (#) so page sections share the same note list
+function getCleanUrlKey(url) {
+  const parsed = new URL(url);
+  return \`\${parsed.origin}\${parsed.pathname}\${parsed.search}\`;
+}
+
+async function savePageNote(currentUrl, noteText) {
+  const key = getCleanUrlKey(currentUrl);
+  const result = await chrome.storage.local.get([key]);
+  const existingNotes = result[key] || [];
+  const updatedNotes = [...existingNotes, { id: Date.now(), text: noteText, createdAt: new Date().toISOString() }];
+  await chrome.storage.local.set({ [key]: updatedNotes });
+  return updatedNotes;
+}`
+        }
+      ]
+    },
+    {
+      category: "CS Core, Databases & APIs",
+      icon: "Binary",
+      description: "Rigorous problem solving, algorithm design, cloud databases, and API integrations",
+      items: [
+        {
+          name: "Data Structures & Algorithms",
+          level: "Advanced",
+          badge: "Core Mastery",
+          experience: "Trees, Graphs (BFS/DFS, Dijkstra), Dynamic Programming, Heaps, Hash Maps",
+          snippet: `// Graph Breadth-First Search (Shortest Path in Unweighted Graph)
+function shortestPath(adjList, startNode, targetNode) {
+  const queue = [[startNode, [startNode]]];
+  const visited = new Set([startNode]);
+
+  while (queue.length > 0) {
+    const [current, path] = queue.shift();
+    if (current === targetNode) return path;
+
+    for (const neighbor of (adjList[current] || [])) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push([neighbor, [...path, neighbor]]);
+      }
+    }
+  }
+  return null; // No path found
+}`
+        },
+        {
+          name: "SQL & Firebase Database",
+          level: "Intermediate",
+          badge: "Relational & NoSQL",
+          experience: "Relational Design, SQL Queries/JOINs, Firebase Realtime Database & Firestore integration",
+          snippet: `-- Complex Analytical SQL Query with Window Functions
+WITH UserPerformance AS (
+    SELECT 
+        u.user_id,
+        u.username,
+        COUNT(s.submission_id) AS total_submissions,
+        SUM(CASE WHEN s.status = 'Accepted' THEN 1 ELSE 0 END) AS accepted_count,
+        RANK() OVER (ORDER BY SUM(CASE WHEN s.status = 'Accepted' THEN 1 ELSE 0 END) DESC) AS rank_tier
+    FROM users u
+    LEFT JOIN submissions s ON u.user_id = s.user_id
+    GROUP BY u.user_id, u.username
+)
+SELECT username, total_submissions, accepted_count, rank_tier
+FROM UserPerformance
+WHERE rank_tier <= 10;`
+        },
+        {
+          name: "API Integration & Async",
+          level: "Proficient",
+          badge: "REST & Webhooks",
+          experience: "RESTful architecture, asynchronous streams, token handling, error resilient fetching",
+          snippet: `// Resilient API Integration with Payload Sanitization
+async function queryExternalService(endpoint, payload) {
+  const startTime = performance.now();
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal
+    });
+
+    const latency = Math.round(performance.now() - startTime);
+    const data = await response.json();
+    return { ok: response.ok, status: response.status, latency, data };
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}`
+        }
+      ]
+    }
+  ],
+
+  projects: [
+    {
+      id: "omniconvertor",
+      title: "OmniConvertor — Multi-Format Client-Side Converter",
+      category: "Fullstack & Angular",
+      featured: true,
+      tagline: "Privacy-first in-browser converter for PDF, images, audio, and video with Firebase database",
+      description: "A modern, privacy-first, client-side web application for converting images, documents, audio, and video directly inside your web browser with zero server uploads. Features PDF to IMG, IMG to PDF, and integrated Firebase database for user preferences and conversion analytics.",
+      techStack: ["React", "JavaScript", "Firebase Database", "WebAssembly", "Tailwind CSS"],
+      highlights: [
+        "100% Client-side conversions with zero file uploads to external servers",
+        "Supports bidirectional PDF to IMG and IMG to PDF conversion flows",
+        "Firebase database integration for real-time history and configuration storage"
+      ],
+      github: "https://github.com/abdullahpervaiz194-del/",
+      demo: "https://omniconvertor-lime.vercel.app/",
+      badge: "Featured Converter"
+    },
+    {
+      id: "python-ai-chatbot",
+      title: "Intelligent Python AI Chatbot with API Integration",
+      category: "Python & APIs",
+      featured: true,
+      tagline: "Context-aware automated chatbot leveraging asynchronous REST APIs and NLP",
+      description: "A robust AI chatbot built with Python featuring seamless API integration. Supports multi-turn contextual conversations, streaming responses, error recovery, custom prompting, and telemetry logging.",
+      techStack: ["Python", "REST APIs", "AsyncIO", "JSON", "NLP Integration"],
+      highlights: [
+        "Asynchronous API integration with real-time token streaming and prompt engineering",
+        "Session context management and intelligent conversation memory",
+        "Graceful fallback handling for rate-limiting and connection interruptions"
+      ],
+      github: "https://github.com/abdullahpervaiz194-del/",
+      demo: "#api-sandbox",
+      badge: "Python & AI"
+    },
+    {
+      id: "website-notes-extension",
+      title: "Website Notes — Manifest V3 Chrome Extension",
+      category: "Fullstack & Angular",
+      featured: true,
+      tagline: "Contextual in-browser notes stored locally with chrome.storage.local",
+      description: "Website Notes is a Manifest V3 Chrome extension that stores page-associated notes locally with chrome.storage.local. URL fragments are removed before notes are associated with a page, so different sections of the same article share one note list.",
+      techStack: ["JavaScript", "Chrome Extensions API", "Manifest V3", "HTML5", "CSS3"],
+      highlights: [
+        "Built on modern Chrome Extension Manifest V3 architecture",
+        "Smart URL fragment (#) stripping so different anchor headings share one unified note list",
+        "Zero tracking: 100% private local storage via chrome.storage.local"
+      ],
+      github: "https://github.com/abdullahpervaiz194-del/",
+      demo: "https://github.com/abdullahpervaiz194-del/",
+      badge: "Chrome Extension"
+    },
+    {
+      id: "dsa-visualizer",
+      title: "Interactive Sorting & Pathfinding Algorithm Visualizer",
+      category: "DSA & Algorithms",
+      featured: true,
+      tagline: "Live step-by-step graphical execution of classic CS algorithms",
+      description: "An interactive educational tool that illustrates the internal mechanics of sorting algorithms (Bubble, Selection, Insertion, QuickSort) with real-time bar animation, comparison counters, and complexity breakdowns. Solidifies core concepts learned in 3rd semester DSA.",
+      techStack: ["React", "JavaScript", "DSA", "HTML5 Canvas", "CSS3"],
+      highlights: [
+        "Real-time visual comparison and array permutation highlighting",
+        "Configurable execution speeds and randomized custom array generators",
+        "Clear time and space complexity explanations (O(N log N) vs O(N²))"
+      ],
+      github: "https://github.com/abdullahpervaiz194-del/",
+      demo: "#visualizer",
+      badge: "Featured DSA"
+    },
+    {
+      id: "cpp-memory-cache",
+      title: "High-Throughput In-Memory Key-Value Store",
+      category: "C++ & Systems",
+      featured: false,
+      tagline: "Low-latency custom storage engine with LRU eviction and memory bounds",
+      description: "A standalone in-memory database cache developed in C++ applying custom hash maps, doubly-linked lists for O(1) Least Recently Used (LRU) eviction, and binary serialization to disk for persistence.",
+      techStack: ["C++17", "STL", "Data Structures", "OOP", "Systems"],
+      highlights: [
+        "O(1) read and write operations via custom hash table and linked list indexing",
+        "Custom LRU eviction policies and memory allocation bounds",
+        "File I/O snapshotting for crash recovery"
+      ],
+      github: "https://github.com/abdullahpervaiz194-del/",
+      demo: "#",
+      badge: "C++ Systems"
+    },
+    {
+      id: "terminal-portfolio-engine",
+      title: "Custom Developer Interactive Terminal CLI",
+      category: "DSA & Algorithms",
+      featured: false,
+      tagline: "In-browser shell emulator with history, commands, and matrix animations",
+      description: "A retro-modern terminal component built with pure JavaScript and React, mimicking Linux bash environments with command parsing, tab auto-complete, and dynamic execution routines.",
+      techStack: ["JavaScript", "React", "CSS3 Animations"],
+      highlights: [
+        "Full keyboard navigation with UP/DOWN history traversal",
+        "Custom commands for resume, skills breakdown, matrix rain, and contact",
+        "Interactive sound effects via Web Audio API"
+      ],
+      github: "https://github.com/abdullahpervaiz194-del/",
+      demo: "#",
+      badge: "CLI Emulator"
+    }
+  ],
+
+  timeline: [
+    {
+      semester: "Semester 1",
+      period: "Foundation & Problem Solving",
+      badge: "Completed",
+      highlights: [
+        "Mastered foundational programming principles in C++ (Loops, Conditionals, Functions)",
+        "Introduction to Computer Science & Discrete Mathematics",
+        "Built first console-based management apps and logic puzzles"
+      ]
+    },
+    {
+      semester: "Semester 2",
+      period: "OOP & Web Foundations",
+      badge: "Completed",
+      highlights: [
+        "Object-Oriented Programming (OOP) in C++ and Python (Inheritance, Polymorphism)",
+        "Web Engineering core: HTML5 semantic layouts, responsive CSS3, and modern JavaScript",
+        "Relational Database Management Systems (RDBMS) & SQL queries"
+      ]
+    },
+    {
+      semester: "Semester 3 (Current)",
+      period: "DSA, Modern Frameworks & API Architectures",
+      badge: "In Progress",
+      highlights: [
+        "Deep dive into Data Structures & Algorithms: Trees, Graphs, Sorting, Dynamic Programming",
+        "Modern enterprise web with Angular Framework, React, and TypeScript",
+        "Asynchronous programming, RESTful API integration, Chrome Extensions (Manifest V3), and Firebase"
+      ]
+    },
+    {
+      semester: "Future Horizons",
+      period: "Operating Systems, Computer Networks & Cloud",
+      badge: "Upcoming",
+      highlights: [
+        "Low-level OS concepts, multi-threading, concurrency, memory paging",
+        "Computer Networks, socket programming, distributed systems",
+        "Containerization (Docker) and Cloud deployment architectures"
+      ]
+    }
+  ],
+
+  terminalCommands: {
+    help: "Available commands:\n  • whoami      : Display developer profile & status\n  • skills      : List core technical competencies\n  • projects    : Show selected featured projects\n  • dsa         : Display DSA progress & topics mastered\n  • contact     : Show email, phone & social links\n  • matrix      : Trigger digital cyber rain animation\n  • clear       : Clear the terminal screen\n  • sudo hire   : Request interview / collaboration",
+    whoami: "Abdullah Pervaiz\nRole: 3rd Semester CS Undergrad | Software Engineering\nCore Stack: Python, C++, TypeScript, SQL, Angular, DSA, APIs, Firebase\nMission: Building high-performance, privacy-first software and robust web applications.",
+    skills: "TECHNICAL STACK:\n- Languages: C++, Python, TypeScript, SQL, HTML5, CSS3\n- Frameworks: Angular Framework, React, Firebase\n- Core: Data Structures & Algorithms (Trees, Graphs, DP), OOP, REST APIs, Chrome Extensions (MV3)",
+    projects: "FEATURED HIGHLIGHTS:\n1. OmniConvertor [PDF to IMG, IMG to PDF, Firebase, Client-Side]\n2. Python AI Chatbot [REST API Integration & NLP]\n3. Website Notes Chrome Extension [Manifest V3 & Local Storage]\n4. Interactive DSA Visualizer [React + Generators]\nVisit projects section for live demos and links.",
+    dsa: "DSA PROGRESS TRACKER:\n- Arrays & Strings: Mastered\n- Linked Lists, Stacks, Queues: Mastered\n- Binary Trees, BSTs, Heaps: Mastered\n- Graphs (BFS, DFS, Dijkstra): In Progress\n- Dynamic Programming: In Progress (Memoization & Tabulation)",
+    contact: "REACH OUT:\n- Name: Abdullah Pervaiz\n- Phone: 03138977582\n- Email: abdullahpervaiz194@gmail.com\n- GitHub: https://github.com/abdullahpervaiz194-del/\n- LinkedIn: https://www.linkedin.com/in/abdullah-pervaiz-2b95902ab",
+    "sudo hire": "ACCESS GRANTED! 🎉\nCandidate status: HIGHLY MOTIVATED & FAST LEARNER.\nReady for internships and collaborative software projects. Let's build something remarkable!"
+  }
+};
+
+// Web Audio API Synthesizer for UI sound effects (Zero external assets needed)
+class SoundManager {
+  constructor() {
+    this.enabled = false; // default muted so we don't surprise user, easily toggled with UI switch
+    this.ctx = null;
+  }
+
+  init() {
+    if (!this.ctx && (window.AudioContext || window.webkitAudioContext)) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      this.ctx = new AudioCtx();
+    }
+    if (this.ctx && this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+  }
+
+  toggle() {
+    this.enabled = !this.enabled;
+    if (this.enabled) {
+      this.init();
+      this.playBeep(880, 0.08, 'sine');
+    }
+    return this.enabled;
+  }
+
+  playClick() {
+    if (!this.enabled) return;
+    this.init();
+    try {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(200, this.ctx.currentTime + 0.04);
+      gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.04);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start();
+      osc.stop(this.ctx.currentTime + 0.04);
+    } catch (e) {}
+  }
+
+  playKeypress() {
+    if (!this.enabled) return;
+    this.init();
+    try {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'triangle';
+      const freq = 350 + Math.random() * 100;
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+      gain.gain.setValueAtTime(0.02, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.03);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start();
+      osc.stop(this.ctx.currentTime + 0.03);
+    } catch (e) {}
+  }
+
+  playBeep(freq = 440, duration = 0.1, type = 'sine') {
+    if (!this.enabled) return;
+    this.init();
+    try {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+      gain.gain.setValueAtTime(0.05, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start();
+      osc.stop(this.ctx.currentTime + duration);
+    } catch (e) {}
+  }
+
+  playSuccess() {
+    if (!this.enabled) return;
+    this.init();
+    try {
+      const now = this.ctx.currentTime;
+      [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+        gain.gain.setValueAtTime(0.04, now + idx * 0.07);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.12);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now + idx * 0.07);
+        osc.stop(now + idx * 0.07 + 0.12);
+      });
+    } catch (e) {}
+  }
+}
+
+window.soundManager = new SoundManager();
+
+// Interactive Constellation & Mesh Canvas Background
+function initCanvasBackground(canvasId) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let animationFrameId;
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
+
+  const particles = [];
+  const particleCount = Math.min(Math.floor((width * height) / 12000), 100);
+  const maxDistance = 140;
+
+  const mouse = {
+    x: null,
+    y: null,
+    radius: 180
+  };
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  window.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.7;
+      this.vy = (Math.random() - 0.5) * 0.7;
+      this.size = Math.random() * 2 + 1;
+      this.baseAlpha = Math.random() * 0.4 + 0.2;
+      this.alpha = this.baseAlpha;
+      // Vibrant cyan, indigo, and violet accents
+      const colors = ['rgba(99, 102, 241,', 'rgba(14, 165, 233,', 'rgba(168, 85, 247,'];
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > width) this.vx *= -1;
+      if (this.y < 0 || this.y > height) this.vy *= -1;
+
+      // Mouse interaction
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < mouse.radius) {
+          const force = (mouse.radius - dist) / mouse.radius;
+          const dirX = dx / dist;
+          const dirY = dy / dist;
+          this.x -= dirX * force * 2;
+          this.y -= dirY * force * 2;
+          this.alpha = Math.min(this.baseAlpha + force * 0.5, 0.9);
+        } else {
+          this.alpha = this.baseAlpha;
+        }
+      }
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `${this.color} ${this.alpha})`;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = `${this.color} 0.5)`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw connecting lines between particles
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxDistance) {
+          const opacity = (1 - dist / maxDistance) * 0.15;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(129, 140, 248, ${opacity})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    animationFrameId = requestAnimationFrame(render);
+  }
+
+  render();
+
+  return () => {
+    cancelAnimationFrame(animationFrameId);
+  };
+}
+
+window.initCanvasBackground = initCanvasBackground;
+
+  </script>
+
+  <!-- React Application Bundle -->
+  <script type="text/babel">
+
+const { useState, useEffect, useRef, useCallback, useMemo } = React;
+
+const SVG_PATHS = {
+  'code-2': '<path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path>',
+  'terminal': '<polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line>',
+  'volume-2': '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>',
+  'volume-x': '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="22" y1="9" x2="16" y2="15"></line><line x1="16" y1="9" x2="22" y2="15"></line>',
+  'sun': '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>',
+  'moon': '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>',
+  'x': '<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>',
+  'menu': '<line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line>',
+  'sparkles': '<path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>',
+  'play': '<polygon points="5 3 19 12 5 21 5 3"></polygon>',
+  'play-circle': '<circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon>',
+  'pause': '<rect width="4" height="16" x="6" y="4"></rect><rect width="4" height="16" x="14" y="4"></rect>',
+  'skip-forward': '<polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" x2="19" y1="5" y2="19"></line>',
+  'refresh-cw': '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path>',
+  'arrow-right': '<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>',
+  'arrow-up': '<path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path>',
+  'arrow-up-right': '<path d="M7 7h10v10"></path><path d="M7 17 17 7"></path>',
+  'external-link': '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line>',
+  'github': '<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path>',
+  'linkedin': '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle>',
+  'code': '<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>',
+  'user': '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>',
+  'cpu': '<rect width="16" height="16" x="4" y="4" rx="2"></rect><rect width="6" height="6" x="9" y="9" rx="1"></rect><path d="M15 2v2"></path><path d="M15 20v2"></path><path d="M2 15h2"></path><path d="M2 9h2"></path><path d="M20 15h2"></path><path d="M20 9h2"></path><path d="M9 2v2"></path><path d="M9 20v2"></path>',
+  'layers': '<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path>',
+  'database': '<ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path>',
+  'network': '<rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path>',
+  'folder-git-2': '<path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"></path><circle cx="12" cy="13" r="2"></circle><path d="M14 13h3"></path><path d="M7 13h3"></path>',
+  'milestone': '<path d="M18 6H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h13l4-3.5L18 6Z"></path><path d="M12 13v8"></path><path d="M12 3v3"></path>',
+  'mail': '<rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>',
+  'clock': '<circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>',
+  'graduation-cap': '<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>',
+  'check': '<polyline points="20 6 9 17 4 12"></polyline>',
+  'check-circle': '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>',
+  'check-circle-2': '<circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path>',
+  'info': '<circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>',
+  'copy': '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>',
+  'map-pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle>',
+  'send': '<path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path>',
+  'loader': '<path d="M21 12a9 9 0 1 1-6.219-8.56"></path>',
+  'shield-check': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path>',
+  'eye': '<path d="2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle>',
+  'phone': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>',
+  'phone-call': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M14.05 2a9 9 0 0 1 8 7.94"></path><path d="M14.05 6A5 5 0 0 1 18 10"></path>'
+};
+
+function Icon({ name, className = "w-4 h-4" }) {
+  const path = SVG_PATHS[name] || '<circle cx="12" cy="12" r="10"></circle>';
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      dangerouslySetInnerHTML={{ __html: path }}
+    />
+  );
+}
+window.Icon = Icon;
+
+
+// --- Navbar.js ---
+// Navbar Component with Glassmorphism and Controls
+
+
+function Navbar({ soundEnabled, onToggleSound, onOpenTerminal }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'DSA Visualizer', href: '#visualizer' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'API Lab', href: '#api-sandbox' },
+    { name: 'Timeline', href: '#timeline' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
+  const handleLinkClick = () => {
+    window.soundManager.playClick();
+    setMobileMenuOpen(false);
+  };
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? 'py-3 glass-panel border-b border-white/10' : 'py-5 bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Brand Logo */}
+        <a 
+          href="#" 
+          onClick={() => window.soundManager.playClick()}
+          className="flex items-center gap-2.5 group"
+        >
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-500 to-cyan-400 p-[1.5px] shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-all duration-300">
+            <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+              <span className="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-300 text-lg">AP</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-bold text-slate-100 text-base tracking-tight group-hover:text-cyan-300 transition-colors">
+              Abdullah Pervaiz
+            </span>
+            <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 status-dot-pulse"></span>
+              3rd Sem CS Undergrad
+            </span>
+          </div>
+        </a>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/5 backdrop-blur-md">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={handleLinkClick}
+              className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        {/* Right Action Icons & Toggles */}
+        <div className="hidden sm:flex items-center gap-2">
+          {/* CLI Terminal Shortcut */}
+          <button
+            onClick={() => {
+              window.soundManager.playClick();
+              onOpenTerminal();
+            }}
+            title="Open Interactive Terminal (CLI)"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-indigo-600/30 text-xs font-mono text-cyan-300 border border-cyan-500/30 hover:border-cyan-400 transition-all shadow-sm"
+          >
+            <Icon name="terminal" className="w-3.5 h-3.5" />
+            <span>CLI</span>
+          </button>
+
+          {/* Sound FX Toggle */}
+          <button
+            onClick={() => {
+              onToggleSound();
+            }}
+            title={soundEnabled ? "Mute UI Sound Effects" : "Enable UI Sound Effects (Audio Synthesis)"}
+            className={`p-2 rounded-lg border transition-all ${
+              soundEnabled 
+                ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400' 
+                : 'bg-slate-800/60 border-white/5 text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <Icon name={soundEnabled ? "volume-2" : "volume-x"} className="w-4 h-4" />
+          </button>
+
+          {/* Resume / Connect CTA */}
+          <a
+            href="#contact"
+            onClick={handleLinkClick}
+            className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-500 text-white text-xs font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:opacity-95 transition-all"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <div className="flex sm:hidden items-center gap-2">
+          <button
+            onClick={() => {
+              window.soundManager.playClick();
+              onOpenTerminal();
+            }}
+            className="p-2 rounded-lg bg-slate-800 text-cyan-400 border border-cyan-500/30"
+          >
+            <Icon name="terminal" className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => {
+              window.soundManager.playClick();
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
+            className="p-2 rounded-lg bg-slate-800 text-slate-200"
+          >
+            <Icon name={mobileMenuOpen ? "x" : "menu"} className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      {mobileMenuOpen && (
+        <div className="sm:hidden px-4 pt-3 pb-6 mt-2 glass-panel border-b border-white/10 space-y-2">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={handleLinkClick}
+              className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10"
+            >
+              {link.name}
+            </a>
+          ))}
+          <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+            <span className="text-xs text-slate-400">Audio Feedback</span>
+            <button
+              onClick={onToggleSound}
+              className={`p-1.5 rounded-lg border text-xs flex items-center gap-1.5 ${
+                soundEnabled ? 'bg-indigo-500/20 text-indigo-300' : 'text-slate-400'
+              }`}
+            >
+              <Icon name={soundEnabled ? "volume-2" : "volume-x"} className="w-4 h-4" />
+              <span>{soundEnabled ? "Active" : "Muted"}</span>
+            </button>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}
+
+window.Navbar = Navbar;
+
+
+// --- Hero.js ---
+// Hero Component with Dynamic Typing & Interactive Action Dock
+
+
+function Hero({ onOpenTerminal }) {
+  const titles = [
+    "3rd-Semester CS Undergrad",
+    "DSA & Algorithms Enthusiast (C++ / Python)",
+    "Full-Stack Web Developer (Angular & TS)",
+    "API & Database Systems Explorer (SQL / REST)"
+  ];
+
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(70);
+
+  useEffect(() => {
+    const currentFullTitle = titles[currentTitleIndex];
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayedText(currentFullTitle.substring(0, displayedText.length + 1));
+        if (displayedText.length + 1 === currentFullTitle.length) {
+          setIsDeleting(true);
+          setTypingSpeed(1800); // pause at full text
+        } else {
+          setTypingSpeed(60);
+        }
+      } else {
+        setDisplayedText(currentFullTitle.substring(0, displayedText.length - 1));
+        if (displayedText.length === 0) {
+          setIsDeleting(false);
+          setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+          setTypingSpeed(300); // pause before next title
+        } else {
+          setTypingSpeed(35);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, currentTitleIndex, typingSpeed]);
+
+  return (
+    <section className="relative min-h-[92vh] pt-32 pb-16 flex items-center justify-center overflow-hidden">
+      {/* Ambient Gradient Glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-gradient-to-tr from-indigo-600/20 via-violet-600/20 to-cyan-500/20 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute -bottom-10 left-10 w-72 h-72 bg-cyan-500/10 blur-[90px] rounded-full pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Column: Heading & Value Proposition */}
+          <div className="lg:col-span-7 text-center lg:text-left space-y-6">
+            
+            {/* Status Pill Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 shadow-inner backdrop-blur-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 status-dot-pulse"></span>
+              <span className="text-xs font-mono text-slate-300">
+                Semester 3 CS • Open to Internships & Projects
+              </span>
+            </div>
+
+            {/* Main Headline */}
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-300 to-cyan-300">Abdullah Pervaiz</span>
+              </h1>
+              
+              {/* Dynamic Subtitle with Terminal Cursor */}
+              <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start">
+                <span className="text-lg sm:text-2xl font-mono text-cyan-400 font-semibold">
+                  &gt; {displayedText}
+                </span>
+                <span className="cli-cursor ml-1"></span>
+              </div>
+            </div>
+
+            {/* Core Narrative / Bio */}
+            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+              Transforming fundamental computer science concepts into elegant, robust applications. 
+              Bridging the gap between <strong className="text-indigo-300 font-semibold">C++ and Python DSA</strong> logic 
+              and modern web engineering with <strong className="text-cyan-300 font-semibold">TypeScript, Angular, SQL</strong>, and 
+              resilient <strong className="text-violet-300 font-semibold">API integrations</strong>.
+            </p>
+
+            {/* Technical Chips */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              {[
+                { name: "C++", color: "from-blue-500/20 to-blue-600/20 text-blue-300 border-blue-500/30" },
+                { name: "Python", color: "from-amber-500/20 to-amber-600/20 text-amber-300 border-amber-500/30" },
+                { name: "DSA & Algorithms", color: "from-emerald-500/20 to-emerald-600/20 text-emerald-300 border-emerald-500/30" },
+                { name: "TypeScript", color: "from-sky-500/20 to-sky-600/20 text-sky-300 border-sky-500/30" },
+                { name: "Angular Framework", color: "from-rose-500/20 to-rose-600/20 text-rose-300 border-rose-500/30" },
+                { name: "SQL Databases", color: "from-purple-500/20 to-purple-600/20 text-purple-300 border-purple-500/30" },
+                { name: "API Integration", color: "from-cyan-500/20 to-cyan-600/20 text-cyan-300 border-cyan-500/30" },
+              ].map((tech) => (
+                <span
+                  key={tech.name}
+                  className={`px-3 py-1 rounded-md text-xs font-mono bg-gradient-to-r ${tech.color} border backdrop-blur-sm`}
+                >
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Buttons Dock */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+              <a
+                href="#projects"
+                onClick={() => window.soundManager.playClick()}
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white font-medium text-sm shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <Icon name="sparkles" className="w-4 h-4" />
+                <span>Explore Featured Projects</span>
+              </a>
+
+              <a
+                href="#visualizer"
+                onClick={() => window.soundManager.playClick()}
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-cyan-300 border border-cyan-500/30 hover:border-cyan-400 font-medium text-sm transition-all duration-200"
+              >
+                <Icon name="play-circle" className="w-4 h-4" />
+                <span>Live DSA Visualizer</span>
+              </a>
+
+              <button
+                onClick={() => {
+                  window.soundManager.playClick();
+                  onOpenTerminal();
+                }}
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-white/10 hover:border-indigo-400 font-mono text-sm transition-all duration-200"
+              >
+                <Icon name="terminal" className="w-4 h-4 text-indigo-400" />
+                <span>Terminal (CLI)</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column: Interactive Code Terminal Card Preview */}
+          <div className="lg:col-span-5">
+            <div className="glass-panel rounded-2xl p-5 border border-white/10 shadow-2xl relative group hover:border-indigo-500/40 transition-all duration-300">
+              
+              {/* Window Header */}
+              <div className="flex items-center justify-between pb-3 border-b border-white/10 text-xs text-slate-400">
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                  <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                  <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                  <span className="font-mono text-slate-400 ml-2">abdullah_profile.cpp</span>
+                </div>
+                <div className="flex items-center gap-1.5 font-mono text-indigo-400 text-[11px]">
+                  <span className="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+                  C++20 / STL
+                </div>
+              </div>
+
+              {/* Code Snippet Body */}
+              <pre className="mt-4 text-xs font-mono leading-relaxed overflow-x-auto text-slate-300">
+                <code>
+                  <span className="text-slate-500">// 3rd Semester Undergrad Profile</span>{'\n'}
+                  <span className="text-purple-400">struct</span> <span className="text-yellow-300">Engineer</span> {'{'}{'\n'}
+                  {'  '}<span className="text-cyan-400">string</span> name = <span className="text-emerald-400">"Abdullah Pervaiz"</span>;{'\n'}
+                  {'  '}<span className="text-purple-400">int</span> semester = <span className="text-amber-300">3</span>;{'\n'}
+                  {'  '}<span className="text-cyan-400">vector</span>&lt;<span className="text-cyan-400">string</span>&gt; coreStack = {'{'}{'\n'}
+                  {'    '}<span className="text-emerald-400">"C++"</span>, <span className="text-emerald-400">"Python"</span>, <span className="text-emerald-400">"DSA"</span>,{'\n'}
+                  {'    '}<span className="text-emerald-400">"TypeScript"</span>, <span className="text-emerald-400">"Angular"</span>, <span className="text-emerald-400">"SQL"</span>{'\n'}
+                  {'  '}{'}'};{'\n'}
+                  {'\n'}
+                  {'  '}<span className="text-purple-400">void</span> <span className="text-blue-400">buildFuture</span>() {'{'}{'\n'}
+                  {'    '}<span className="text-purple-400">while</span> (<span className="text-amber-300">true</span>) {'{'}{'\n'}
+                  {'      '}solveProblems();{'\n'}
+                  {'      '}integrateAPIs();{'\n'}
+                  {'      '}optimizeAlgorithms();{'\n'}
+                  {'    '}{'}'}{'\n'}
+                  {'  '}{'}'}{'\n'}
+                  {'}'};
+                </code>
+              </pre>
+
+              {/* Quick interactive trigger inside card */}
+              <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 font-mono">
+                  Compiled with <span className="text-emerald-400">0 errors</span>
+                </span>
+                <button
+                  onClick={() => {
+                    window.soundManager.playSuccess();
+                    onOpenTerminal();
+                  }}
+                  className="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group/btn"
+                >
+                  <span>Execute in CLI</span>
+                  <Icon name="arrow-right" className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+
+            {/* Quick Metrics Strip */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+              {window.PORTFOLIO_DATA.personal.stats.map((stat, index) => (
+                <div key={index} className="glass-card rounded-xl p-3 text-center">
+                  <div className="text-xl font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-cyan-300">
+                    {stat.value}
+                  </div>
+                  <div className="text-[10px] text-slate-400 mt-0.5 leading-tight">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+window.Hero = Hero;
+
+
+// --- About.js ---
+// About Component with 3rd Semester Journey & Core Focus
+function About() {
+  const pillars = [
+    {
+      icon: "Binary",
+      title: "Algorithmic Precision (DSA)",
+      desc: "Deeply engaged in mastering trees, graphs, recursion, sorting algorithms, and complexity analysis (Time & Space O(N)) in C++ and Python.",
+      gradient: "from-blue-500/20 to-indigo-500/20",
+      border: "border-blue-500/30",
+      textColor: "text-blue-300"
+    },
+    {
+      icon: "Layers",
+      title: "Full-Stack & Angular Engineering",
+      desc: "Building structured web applications utilizing Angular's component architecture, dependency injection, TypeScript generics, and reactive RxJS pipelines.",
+      gradient: "from-rose-500/20 to-orange-500/20",
+      border: "border-rose-500/30",
+      textColor: "text-rose-300"
+    },
+    {
+      icon: "Database",
+      title: "Data Modeling & SQL",
+      desc: "Designing normalized relational schemas (1NF to 3NF), writing analytical queries with multi-table joins, subqueries, and database indexing.",
+      gradient: "from-purple-500/20 to-indigo-500/20",
+      border: "border-purple-500/30",
+      textColor: "text-purple-300"
+    },
+    {
+      icon: "Network",
+      title: "API Architecture & Integration",
+      desc: "Integrating RESTful services, error handling, async fetch workflows, token management, and translating raw JSON into dynamic, interactive UI states.",
+      gradient: "from-cyan-500/20 to-emerald-500/20",
+      border: "border-cyan-500/30",
+      textColor: "text-cyan-300"
+    }
+  ];
+
+  return (
+    <section id="about" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Title */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono mb-4">
+            <Icon name="user" className="w-3.5 h-3.5" />
+            <span>Engineering Journey</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Who I Am & What Drives Me
+          </h2>
+          <p className="text-slate-400 mt-4 text-base sm:text-lg leading-relaxed">
+            Currently in my <strong>3rd semester of Computer Science</strong>, where I combine theoretical depth 
+            in computation with practical software craftsmanship across languages and frameworks.
+          </p>
+        </div>
+
+        {/* Story Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+          
+          {/* Main Narrative Card */}
+          <div className="lg:col-span-7 glass-panel rounded-2xl p-6 sm:p-8 space-y-5 border border-white/10">
+            <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2">
+              <span className="text-indigo-400">#</span> Academic & Engineering Philosophy
+            </h3>
+            
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+              Computer science is more than just writing code that runs—it's about understanding how memory is allocated, 
+              how data travels across network boundaries, and how algorithms scale from 100 items to 10 million items.
+            </p>
+
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+              In my 3rd semester, my daily routine centers around two core tracks:
+            </p>
+
+            <div className="space-y-3 pl-2 border-l-2 border-indigo-500/40">
+              <div>
+                <span className="font-semibold text-cyan-300 text-sm">1. Low-Level Rigor & Problem Solving:</span>
+                <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
+                  Writing high-performance C++ and Python implementations of Data Structures (balanced trees, graphs, heaps) 
+                  and analyzing asymptotic time & space trade-offs.
+                </p>
+              </div>
+              <div>
+                <span className="font-semibold text-indigo-300 text-sm">2. Modern Web & Application Ecosystem:</span>
+                <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
+                  Building reactive user interfaces with Angular and React, leveraging TypeScript for bulletproof contracts, 
+                  and consuming REST APIs with clean error handling and SQL databases.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
+              <span className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-white/5">
+                <Icon name="graduation-cap" className="w-4 h-4 text-indigo-400" />
+                CS Undergraduate
+              </span>
+              <span className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-white/5">
+                <Icon name="clock" className="w-4 h-4 text-cyan-400" />
+                Semester 3 Active
+              </span>
+              <span className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-white/5">
+                <Icon name="terminal" className="w-4 h-4 text-emerald-400" />
+                Terminal & Git Native
+              </span>
+            </div>
+          </div>
+
+          {/* Key Pillars */}
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {pillars.map((p, idx) => (
+              <div 
+                key={idx}
+                className="glass-card rounded-xl p-5 border border-white/10 hover:border-indigo-500/40 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-tr ${p.gradient} ${p.border} border flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                    <Icon name={p.icon.toLowerCase()} className={`w-5 h-5 ${p.textColor}`} />
+                  </div>
+                  <h4 className="font-semibold text-slate-100 text-sm mb-1.5">{p.title}</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+window.About = About;
+
+
+// --- Skills.js ---
+// Skills Component with Interactive Code Peek Modal
+
+
+function Skills() {
+  const [selectedSkill, setSelectedSkill] = useState(null);
+  const [copied, setCopied] = useState(false);
+  const categories = window.PORTFOLIO_DATA.skills;
+
+  const handleOpenCodePeek = (skill) => {
+    window.soundManager.playClick();
+    setSelectedSkill(skill);
+    setCopied(false);
+  };
+
+  const handleCopyCode = () => {
+    if (!selectedSkill) return;
+    navigator.clipboard.writeText(selectedSkill.snippet);
+    window.soundManager.playSuccess();
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <section id="skills" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-4">
+            <Icon name="cpu" className="w-3.5 h-3.5" />
+            <span>Technical Capabilities</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Languages, Frameworks & Core Mastery
+          </h2>
+          <p className="text-slate-400 mt-4 text-base leading-relaxed">
+            Click any skill card below to open <span className="text-cyan-300 font-semibold">"Code Peek"</span> and view authentic code implementations demonstrating real mastery.
+          </p>
+        </div>
+
+        {/* Skill Categories Grid */}
+        <div className="space-y-12">
+          {categories.map((cat, catIdx) => (
+            <div key={catIdx} className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-white/10 gap-2">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
+                    {cat.category}
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-0.5">{cat.description}</p>
+                </div>
+                <span className="text-xs font-mono text-cyan-400/80 bg-cyan-500/10 px-3 py-1 rounded-full w-fit">
+                  {cat.items.length} Core Competencies
+                </span>
+              </div>
+
+              {/* Skills Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {cat.items.map((skill, skillIdx) => (
+                  <div
+                    key={skillIdx}
+                    onClick={() => handleOpenCodePeek(skill)}
+                    className="glass-card glass-card-interactive rounded-2xl p-5 border border-white/10 hover:border-cyan-500/50 group flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-9 h-9 rounded-xl bg-slate-800/80 border border-white/10 flex items-center justify-center group-hover:scale-105 group-hover:border-cyan-500/50 transition-all">
+                            <Icon name="code-2" className="w-4 h-4 text-cyan-400" />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-white text-base group-hover:text-cyan-300 transition-colors">
+                              {skill.name}
+                            </h4>
+                            <span className="text-[11px] font-mono text-indigo-400">
+                              {skill.badge}
+                            </span>
+                          </div>
+                        </div>
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-slate-800 text-slate-300 border border-white/5">
+                          {skill.level}
+                        </span>
+                      </div>
+
+                      <p className="text-xs text-slate-300 leading-relaxed mt-2">
+                        {skill.experience}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-cyan-400 font-mono group-hover:text-cyan-300">
+                      <span className="flex items-center gap-1.5">
+                        <Icon name="eye" className="w-3.5 h-3.5" />
+                        Peek Code Snippet
+                      </span>
+                      <Icon name="arrow-up-right" className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Code Peek Modal */}
+        {selectedSkill && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+            <div className="glass-panel rounded-2xl max-w-3xl w-full border border-cyan-500/30 shadow-2xl overflow-hidden animate-scaleUp">
+              
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-slate-900/90">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-rose-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                  <span className="font-mono text-sm text-slate-200 font-semibold ml-2">
+                    {selectedSkill.name} — Implementation Code
+                  </span>
+                </div>
+                <button
+                  onClick={() => {
+                    window.soundManager.playClick();
+                    setSelectedSkill(null);
+                  }}
+                  className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                >
+                  <Icon name="x" className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Modal Body */}
+              <div className="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-slate-400">
+                    Topic: <strong className="text-cyan-300">{selectedSkill.badge}</strong>
+                  </span>
+                  <button
+                    onClick={handleCopyCode}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 border border-white/10 transition-all"
+                  >
+                    <Icon name={copied ? "check" : "copy"} className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>{copied ? "Copied!" : "Copy Code"}</span>
+                  </button>
+                </div>
+
+                <div className="bg-slate-950 rounded-xl p-4 border border-white/10 overflow-x-auto">
+                  <pre className="text-xs font-mono text-emerald-300 leading-relaxed">
+                    <code>{selectedSkill.snippet}</code>
+                  </pre>
+                </div>
+
+                <p className="text-xs text-slate-400 italic">
+                  *Demonstrates practical implementation concepts learned and applied during Semester 3 coursework and personal builds.
+                </p>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="px-6 py-3 border-t border-white/10 bg-slate-900/60 flex justify-end">
+                <button
+                  onClick={() => {
+                    window.soundManager.playClick();
+                    setSelectedSkill(null);
+                  }}
+                  className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-all"
+                >
+                  Close Peek
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
+
+      </div>
+    </section>
+  );
+}
+
+window.Skills = Skills;
+
+
+// --- DsaVisualizer.js ---
+// Interactive Data Structures & Algorithms Visualizer
+
+
+function DsaVisualizer() {
+  const [array, setArray] = useState([45, 20, 75, 12, 60, 32, 88, 15, 52, 28, 95, 40]);
+  const [algorithm, setAlgorithm] = useState("bubble");
+  const [comparing, setComparing] = useState([]);
+  const [sortedIndices, setSortedIndices] = useState([]);
+  const [swapping, setSwapping] = useState([]);
+  const [isRunning, setIsRunning] = useState(false);
+  const [speed, setSpeed] = useState(120); // ms per step
+  const [stats, setStats] = useState({ comparisons: 0, swaps: 0, status: "Ready" });
+
+  const generatorRef = useRef(null);
+  const timerRef = useRef(null);
+
+  // Complexity metadata
+  const complexities = {
+    bubble: {
+      name: "Bubble Sort",
+      best: "O(N)",
+      avg: "O(N²)",
+      worst: "O(N²)",
+      space: "O(1)",
+      desc: "Repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order."
+    },
+    selection: {
+      name: "Selection Sort",
+      best: "O(N²)",
+      avg: "O(N²)",
+      worst: "O(N²)",
+      space: "O(1)",
+      desc: "Finds the minimum element from the unsorted part and puts it at the beginning. Minimizes swap operations."
+    },
+    insertion: {
+      name: "Insertion Sort",
+      best: "O(N)",
+      avg: "O(N²)",
+      worst: "O(N²)",
+      space: "O(1)",
+      desc: "Builds the sorted array one item at a time by repeatedly taking the next element and inserting it into its correct position."
+    }
+  };
+
+  // Generate random array
+  const generateNewArray = (size = 14) => {
+    stopSorting();
+    const newArr = [];
+    for (let i = 0; i < size; i++) {
+      newArr.push(Math.floor(Math.random() * 85) + 12);
+    }
+    setArray(newArr);
+    setComparing([]);
+    setSortedIndices([]);
+    setSwapping([]);
+    setStats({ comparisons: 0, swaps: 0, status: "Generated new random array" });
+    window.soundManager.playClick();
+  };
+
+  // Stop / pause
+  const stopSorting = () => {
+    setIsRunning(false);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+
+  // Reset state
+  const resetArray = () => {
+    generateNewArray(14);
+  };
+
+  // Generator for Bubble Sort
+  function* bubbleSortGen(arr) {
+    const a = [...arr];
+    const n = a.length;
+    let comparisons = 0;
+    let swaps = 0;
+
+    for (let i = 0; i < n - 1; i++) {
+      let swapped = false;
+      for (let j = 0; j < n - i - 1; j++) {
+        comparisons++;
+        yield { 
+          array: [...a], 
+          comparing: [j, j + 1], 
+          swapping: [], 
+          sorted: a.map((_, idx) => idx >= n - i ? idx : null).filter(x => x !== null),
+          stats: { comparisons, swaps, status: `Comparing index ${j} (${a[j]}) and ${j + 1} (${a[j + 1]})` }
+        };
+
+        if (a[j] > a[j + 1]) {
+          swaps++;
+          const temp = a[j];
+          a[j] = a[j + 1];
+          a[j + 1] = temp;
+          swapped = true;
+
+          yield { 
+            array: [...a], 
+            comparing: [], 
+            swapping: [j, j + 1], 
+            sorted: a.map((_, idx) => idx >= n - i ? idx : null).filter(x => x !== null),
+            stats: { comparisons, swaps, status: `Swapped ${a[j]} and ${a[j + 1]}` }
+          };
+        }
+      }
+      if (!swapped) break;
+    }
+
+    yield {
+      array: [...a],
+      comparing: [],
+      swapping: [],
+      sorted: a.map((_, idx) => idx),
+      stats: { comparisons, swaps, status: "Complete! Array is fully sorted." }
+    };
+  }
+
+  // Generator for Selection Sort
+  function* selectionSortGen(arr) {
+    const a = [...arr];
+    const n = a.length;
+    let comparisons = 0;
+    let swaps = 0;
+
+    for (let i = 0; i < n; i++) {
+      let minIdx = i;
+      for (let j = i + 1; j < n; j++) {
+        comparisons++;
+        yield {
+          array: [...a],
+          comparing: [minIdx, j],
+          swapping: [],
+          sorted: a.map((_, idx) => idx < i ? idx : null).filter(x => x !== null),
+          stats: { comparisons, swaps, status: `Checking if element at ${j} (${a[j]}) < min at ${minIdx} (${a[minIdx]})` }
+        };
+
+        if (a[j] < a[minIdx]) {
+          minIdx = j;
+        }
+      }
+
+      if (minIdx !== i) {
+        swaps++;
+        const temp = a[i];
+        a[i] = a[minIdx];
+        a[minIdx] = temp;
+
+        yield {
+          array: [...a],
+          comparing: [],
+          swapping: [i, minIdx],
+          sorted: a.map((_, idx) => idx <= i ? idx : null).filter(x => x !== null),
+          stats: { comparisons, swaps, status: `Swapped minimum element ${a[i]} into position ${i}` }
+        };
+      }
+    }
+
+    yield {
+      array: [...a],
+      comparing: [],
+      swapping: [],
+      sorted: a.map((_, idx) => idx),
+      stats: { comparisons, swaps, status: "Complete! Array is fully sorted." }
+    };
+  }
+
+  // Generator for Insertion Sort
+  function* insertionSortGen(arr) {
+    const a = [...arr];
+    const n = a.length;
+    let comparisons = 0;
+    let swaps = 0;
+
+    for (let i = 1; i < n; i++) {
+      let key = a[i];
+      let j = i - 1;
+
+      yield {
+        array: [...a],
+        comparing: [i],
+        swapping: [],
+        sorted: a.map((_, idx) => idx < i ? idx : null).filter(x => x !== null),
+        stats: { comparisons, swaps, status: `Selected key ${key} at index ${i}` }
+      };
+
+      while (j >= 0 && a[j] > key) {
+        comparisons++;
+        swaps++;
+        a[j + 1] = a[j];
+        yield {
+          array: [...a],
+          comparing: [j, j + 1],
+          swapping: [j + 1],
+          sorted: [],
+          stats: { comparisons, swaps, status: `Shifted element ${a[j]} to position ${j + 1}` }
+        };
+        j = j - 1;
+      }
+      a[j + 1] = key;
+    }
+
+    yield {
+      array: [...a],
+      comparing: [],
+      swapping: [],
+      sorted: a.map((_, idx) => idx),
+      stats: { comparisons, swaps, status: "Complete! Array is fully sorted." }
+    };
+  }
+
+  const stepForward = () => {
+    if (!generatorRef.current) {
+      if (algorithm === "bubble") generatorRef.current = bubbleSortGen(array);
+      else if (algorithm === "selection") generatorRef.current = selectionSortGen(array);
+      else generatorRef.current = insertionSortGen(array);
+    }
+
+    const next = generatorRef.current.next();
+    if (!next.done) {
+      setArray(next.value.array);
+      setComparing(next.value.comparing);
+      setSwapping(next.value.swapping);
+      setSortedIndices(next.value.sorted);
+      setStats(next.value.stats);
+      window.soundManager.playKeypress();
+    } else {
+      stopSorting();
+      generatorRef.current = null;
+      window.soundManager.playSuccess();
+    }
+  };
+
+  const togglePlay = () => {
+    if (isRunning) {
+      stopSorting();
+      window.soundManager.playClick();
+    } else {
+      setIsRunning(true);
+      window.soundManager.playClick();
+    }
+  };
+
+  useEffect(() => {
+    if (isRunning) {
+      timerRef.current = setInterval(() => {
+        stepForward();
+      }, speed);
+    } else {
+      if (timerRef.current) clearInterval(timerRef.current);
+    }
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isRunning, speed, array, algorithm]);
+
+  const handleAlgoChange = (algoKey) => {
+    stopSorting();
+    generatorRef.current = null;
+    setAlgorithm(algoKey);
+    setComparing([]);
+    setSortedIndices([]);
+    setSwapping([]);
+    setStats({ comparisons: 0, swaps: 0, status: `Selected ${complexities[algoKey].name}` });
+    window.soundManager.playClick();
+  };
+
+  const currComplexity = complexities[algorithm];
+
+  return (
+    <section id="visualizer" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
+            <Icon name="play" className="w-3.5 h-3.5" />
+            <span>Live Interactive Lab</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Data Structures & Algorithms Visualizer
+          </h2>
+          <p className="text-slate-400 mt-4 text-base leading-relaxed">
+            Direct demonstration of 3rd-semester algorithmic knowledge. Interact in real-time, adjust speed, 
+            inspect step comparisons, and analyze computational complexities.
+          </p>
+        </div>
+
+        {/* Visualizer Workbench */}
+        <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl space-y-6">
+          
+          {/* Controls Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10">
+            
+            {/* Algorithm Selector Buttons */}
+            <div className="flex flex-wrap items-center gap-2 bg-slate-900/80 p-1.5 rounded-xl border border-white/5">
+              {Object.keys(complexities).map((key) => (
+                <button
+                  key={key}
+                  onClick={() => handleAlgoChange(key)}
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    algorithm === key
+                      ? 'bg-gradient-to-r from-indigo-500 to-cyan-500 text-white shadow-md'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  {complexities[key].name}
+                </button>
+              ))}
+            </div>
+
+            {/* Execution Buttons */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={togglePlay}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold shadow-md transition-all ${
+                  isRunning 
+                    ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300' 
+                    : 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-500/20'
+                }`}
+              >
+                <Icon name={isRunning ? "pause" : "play"} className="w-3.5 h-3.5" />
+                <span>{isRunning ? "Pause" : "Play Run"}</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  stopSorting();
+                  stepForward();
+                }}
+                disabled={isRunning}
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 disabled:opacity-50 text-slate-200 border border-white/10 text-xs font-medium transition-all"
+                title="Execute single comparison step"
+              >
+                <Icon name="skip-forward" className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Step</span>
+              </button>
+
+              <button
+                onClick={resetArray}
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-white/10 text-xs font-medium transition-all"
+                title="Randomize data array"
+              >
+                <Icon name="refresh-cw" className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Randomize</span>
+              </button>
+            </div>
+
+            {/* Speed Slider */}
+            <div className="flex items-center gap-3 bg-slate-900/60 px-3 py-1.5 rounded-xl border border-white/5">
+              <span className="text-[11px] font-mono text-slate-400">Speed:</span>
+              <input
+                type="range"
+                min="30"
+                max="300"
+                value={speed}
+                onChange={(e) => setSpeed(Number(e.target.value))}
+                className="w-24 cursor-pointer"
+              />
+              <span className="text-[11px] font-mono text-cyan-300 w-12">{speed}ms</span>
+            </div>
+
+          </div>
+
+          {/* Graphical Bars Display */}
+          <div className="h-64 sm:h-72 w-full bg-slate-950/70 rounded-xl p-4 sm:p-6 border border-white/5 flex items-end justify-center gap-2 sm:gap-3 relative overflow-hidden">
+            {array.map((val, idx) => {
+              const isComp = comparing.includes(idx);
+              const isSwap = swapping.includes(idx);
+              const isSorted = sortedIndices.includes(idx);
+
+              let barColor = "bg-indigo-500/60 border-indigo-400/50";
+              if (isSorted) barColor = "bg-emerald-500/80 border-emerald-400 shadow-lg shadow-emerald-500/30";
+              else if (isSwap) barColor = "bg-rose-500 border-rose-300 animate-pulse";
+              else if (isComp) barColor = "bg-amber-400 border-amber-200 shadow-md shadow-amber-400/30";
+
+              return (
+                <div key={idx} className="flex-1 flex flex-col items-center h-full justify-end max-w-[48px]">
+                  <span className="text-[10px] font-mono text-slate-400 mb-1 hidden sm:block">
+                    {val}
+                  </span>
+                  <div
+                    style={{ height: `${val}%` }}
+                    className={`w-full rounded-t-md border-t-2 transition-all duration-100 ${barColor}`}
+                  ></div>
+                  <span className="text-[9px] font-mono text-slate-500 mt-1">
+                    {idx}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Real-time Status & Complexity Footer */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center pt-2">
+            
+            {/* Status & Stats */}
+            <div className="md:col-span-6 bg-slate-900/60 rounded-xl p-3.5 border border-white/5 flex items-center justify-between">
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div>
+                  <span className="text-slate-500">Comparisons: </span>
+                  <strong className="text-cyan-300">{stats.comparisons}</strong>
+                </div>
+                <div>
+                  <span className="text-slate-500">Swaps: </span>
+                  <strong className="text-indigo-300">{stats.swaps}</strong>
+                </div>
+              </div>
+              <div className="text-right truncate max-w-[200px] text-xs font-mono text-emerald-400">
+                {stats.status}
+              </div>
+            </div>
+
+            {/* Complexity Badges */}
+            <div className="md:col-span-6 flex flex-wrap items-center justify-end gap-2 text-[11px] font-mono">
+              <span className="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 border border-white/5">
+                Best: <strong className="text-emerald-400">{currComplexity.best}</strong>
+              </span>
+              <span className="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 border border-white/5">
+                Avg: <strong className="text-amber-400">{currComplexity.avg}</strong>
+              </span>
+              <span className="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 border border-white/5">
+                Worst: <strong className="text-rose-400">{currComplexity.worst}</strong>
+              </span>
+              <span className="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 border border-white/5">
+                Space: <strong className="text-cyan-400">{currComplexity.space}</strong>
+              </span>
+            </div>
+
+          </div>
+
+          <p className="text-xs text-slate-400 italic">
+            *Built with custom JavaScript generators in React to simulate real synchronous step execution and memory swapping without blocking the browser thread.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+window.DsaVisualizer = DsaVisualizer;
+
+
+// --- Terminal.js ---
+// Interactive Developer Terminal CLI Component
+
+
+function Terminal({ isOpen, onClose }) {
+  const [history, setHistory] = useState([
+    { type: 'system', text: 'Welcome to Tauseef Noor\'s Interactive Terminal [Version 3.2.0-CS3]' },
+    { type: 'system', text: 'Type "help" to see available commands or "whoami" to inspect profile.\n' }
+  ]);
+  const [inputVal, setInputVal] = useState('');
+  const [cmdHistory, setCmdHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+  const [isMatrixMode, setIsMatrixMode] = useState(false);
+
+  const bottomRef = useRef(null);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [history, isMatrixMode]);
+
+  if (!isOpen) return null;
+
+  const handleKeyDown = (e) => {
+    window.soundManager.playKeypress();
+
+    if (e.key === 'Enter') {
+      const trimmed = inputVal.trim();
+      if (!trimmed) return;
+
+      const newHistory = [...history, { type: 'user', text: `$ ${trimmed}` }];
+      const cmdKey = trimmed.toLowerCase();
+
+      // Add to command history for arrow navigation
+      setCmdHistory((prev) => [...prev, trimmed]);
+      setHistoryIndex(-1);
+
+      // Evaluate command
+      if (cmdKey === 'clear') {
+        setHistory([]);
+        setIsMatrixMode(false);
+        setInputVal('');
+        return;
+      } else if (cmdKey === 'matrix') {
+        setIsMatrixMode(true);
+        newHistory.push({ type: 'output', text: 'Initiating Cyber Matrix Rain... (type "clear" to exit)' });
+        window.soundManager.playSuccess();
+      } else if (window.PORTFOLIO_DATA.terminalCommands[cmdKey]) {
+        newHistory.push({ type: 'output', text: window.PORTFOLIO_DATA.terminalCommands[cmdKey] });
+        if (cmdKey === 'sudo hire') window.soundManager.playSuccess();
+      } else {
+        newHistory.push({ 
+          type: 'error', 
+          text: `zsh: command not found: ${trimmed}. Type "help" for a list of valid commands.` 
+        });
+      }
+
+      setHistory(newHistory);
+      setInputVal('');
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (cmdHistory.length === 0) return;
+      const nextIndex = historyIndex === -1 ? cmdHistory.length - 1 : Math.max(0, historyIndex - 1);
+      setHistoryIndex(nextIndex);
+      setInputVal(cmdHistory[nextIndex] || '');
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex === -1) return;
+      const nextIndex = historyIndex + 1;
+      if (nextIndex >= cmdHistory.length) {
+        setHistoryIndex(-1);
+        setInputVal('');
+      } else {
+        setHistoryIndex(nextIndex);
+        setInputVal(cmdHistory[nextIndex]);
+      }
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      const available = ['help', 'whoami', 'skills', 'projects', 'dsa', 'contact', 'matrix', 'clear', 'sudo hire'];
+      const match = available.find(c => c.startsWith(inputVal.toLowerCase().trim()));
+      if (match) {
+        setInputVal(match);
+      }
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-fadeIn">
+      <div className="glass-panel w-full max-w-4xl h-[80vh] rounded-2xl border border-cyan-500/40 shadow-2xl flex flex-col overflow-hidden animate-scaleUp">
+        
+        {/* Terminal Header Bar */}
+        <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-white/10 select-none">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                window.soundManager.playClick();
+                onClose();
+              }}
+              className="w-3.5 h-3.5 rounded-full bg-rose-500/90 hover:bg-rose-600 transition-colors"
+              title="Close Terminal"
+            ></button>
+            <button
+              onClick={() => setHistory([])}
+              className="w-3.5 h-3.5 rounded-full bg-amber-500/90 hover:bg-amber-600 transition-colors"
+              title="Clear Terminal"
+            ></button>
+            <button
+              onClick={() => setIsMatrixMode(!isMatrixMode)}
+              className="w-3.5 h-3.5 rounded-full bg-emerald-500/90 hover:bg-emerald-600 transition-colors"
+              title="Toggle Matrix Rain"
+            ></button>
+            <span className="font-mono text-xs text-slate-400 ml-3">
+              tauseef@cs3-workstation: ~ (zsh)
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="text-[11px] font-mono text-cyan-400 hidden sm:inline-block">
+              Interactive Dev CLI
+            </span>
+            <button
+              onClick={() => {
+                window.soundManager.playClick();
+                onClose();
+              }}
+              className="p-1 rounded text-slate-400 hover:text-white hover:bg-white/10"
+            >
+              <Icon name="x" className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Terminal Content Area */}
+        <div 
+          onClick={() => inputRef.current?.focus()}
+          className={`flex-1 p-4 sm:p-6 font-mono text-xs sm:text-sm overflow-y-auto space-y-2.5 ${
+            isMatrixMode ? 'bg-black text-emerald-400' : 'bg-slate-950 text-slate-200'
+          }`}
+        >
+          {history.map((item, idx) => (
+            <div key={idx} className="whitespace-pre-wrap leading-relaxed">
+              {item.type === 'user' && (
+                <span className="text-cyan-400 font-bold">{item.text}</span>
+              )}
+              {item.type === 'system' && (
+                <span className="text-slate-400">{item.text}</span>
+              )}
+              {item.type === 'output' && (
+                <span className={isMatrixMode ? 'text-emerald-400' : 'text-slate-200'}>
+                  {item.text}
+                </span>
+              )}
+              {item.type === 'error' && (
+                <span className="text-rose-400">{item.text}</span>
+              )}
+            </div>
+          ))}
+
+          {/* Prompt Line */}
+          <div className="flex items-center gap-2 pt-1">
+            <span className="text-indigo-400 font-bold">tauseef@cs3</span>
+            <span className="text-slate-500">:</span>
+            <span className="text-cyan-400 font-bold">~</span>
+            <span className="text-slate-300">$</span>
+            <input
+              ref={inputRef}
+              type="text"
+              value={inputVal}
+              onChange={(e) => setInputVal(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className="flex-1 bg-transparent outline-none border-none text-slate-100 font-mono focus:ring-0 p-0"
+              autoFocus
+              spellCheck="false"
+            />
+          </div>
+
+          <div ref={bottomRef} />
+        </div>
+
+        {/* Terminal Footer Quick Buttons */}
+        <div className="px-4 py-2 bg-slate-900/80 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-400 gap-2">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-slate-500">Quick:</span>
+            {['whoami', 'skills', 'projects', 'dsa', 'sudo hire', 'clear'].map((cmd) => (
+              <button
+                key={cmd}
+                onClick={() => {
+                  setInputVal(cmd);
+                  inputRef.current?.focus();
+                }}
+                className="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 transition-colors"
+              >
+                {cmd}
+              </button>
+            ))}
+          </div>
+          <span className="text-slate-500 hidden md:inline">
+            [Tab]: autocomplete • [↑/↓]: history
+          </span>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+window.Terminal = Terminal;
+
+
+// --- ApiSandbox.js ---
+// Interactive API Integration Sandbox Component
+
+
+function ApiSandbox() {
+  const [method, setMethod] = useState("GET");
+  const [endpoint, setEndpoint] = useState("/api/v1/student/profile");
+  const [requestBody, setRequestBody] = useState('{\n  "query": "dsa-c++",\n  "semester": 3\n}');
+  const [isLoading, setIsLoading] = useState(false);
+  const [response, setResponse] = useState({
+    status: 200,
+    statusText: "OK",
+    latency: 38,
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "x-powered-by": "Express / Node / C++ Service",
+      "cache-control": "max-age=3600"
+    },
+    data: {
+      student: "Abdullah Pervaiz",
+      semester: 3,
+      program: "Computer Science & Engineering",
+      coreStack: ["Python", "C++", "DSA", "TypeScript", "Angular", "SQL", "APIs"],
+      status: "Actively Available for Internships & Projects"
+    }
+  });
+
+  const sampleEndpoints = [
+    {
+      name: "Student Profile API",
+      method: "GET",
+      url: "/api/v1/student/profile",
+      body: ""
+    },
+    {
+      name: "DSA Problem-Set Telemetry",
+      method: "GET",
+      url: "/api/v1/dsa/problem-set",
+      body: ""
+    },
+    {
+      name: "C++ In-Memory Cache Query",
+      method: "POST",
+      url: "/api/v1/cache/lookup",
+      body: '{\n  "key": "user:abdullah:session",\n  "evictionPolicy": "LRU"\n}'
+    },
+    {
+      name: "SQL Analytics Aggregator",
+      method: "GET",
+      url: "/api/v1/sql/query-plan",
+      body: ""
+    }
+  ];
+
+  const handleSelectSample = (sample) => {
+    window.soundManager.playClick();
+    setMethod(sample.method);
+    setEndpoint(sample.url);
+    if (sample.body) setRequestBody(sample.body);
+  };
+
+  const handleSendRequest = () => {
+    window.soundManager.playClick();
+    setIsLoading(true);
+
+    const start = performance.now();
+
+    setTimeout(() => {
+      const latency = Math.round(performance.now() - start + Math.random() * 25 + 15);
+      let resData;
+
+      if (endpoint.includes("profile")) {
+        resData = {
+          student: "Abdullah Pervaiz",
+          semester: 3,
+          major: "Computer Science",
+          skills: ["Python", "C++", "DSA", "TypeScript", "Angular", "SQL", "APIs"],
+          gpaStatus: "Dean's Honor Roll Track",
+          availability: "Immediate"
+        };
+      } else if (endpoint.includes("dsa")) {
+        resData = {
+          category: "Data Structures & Algorithms",
+          totalSolved: 250,
+          breakdown: {
+            arraysAndStrings: 85,
+            linkedListsAndStacks: 60,
+            treesAndGraphs: 75,
+            dynamicProgramming: 30
+          },
+          targetComplexity: "O(N) to O(N log N)"
+        };
+      } else if (endpoint.includes("cache")) {
+        resData = {
+          cacheHit: true,
+          lookupLatencyMs: 0.4,
+          storedValue: {
+            sessionToken: "c18a-9e7f-442b",
+            ttlSeconds: 3600,
+            engine: "C++ LRU In-Memory Store"
+          }
+        };
+      } else {
+        resData = {
+          query: "EXPLAIN ANALYZE SELECT * FROM projects JOIN skills ON id",
+          executionPlan: "Index Scan on idx_skills (cost=0.15..8.17 rows=1)",
+          planningTimeMs: 0.12,
+          executionTimeMs: 0.45,
+          status: "Optimal"
+        };
+      }
+
+      setResponse({
+        status: method === "POST" ? 201 : 200,
+        statusText: method === "POST" ? "Created" : "OK",
+        latency,
+        headers: {
+          "content-type": "application/json",
+          "x-response-time": `${latency}ms`,
+          "access-control-allow-origin": "*"
+        },
+        data: resData
+      });
+
+      setIsLoading(false);
+      window.soundManager.playSuccess();
+    }, 450);
+  };
+
+  return (
+    <section id="api-sandbox" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-mono mb-4">
+            <Icon name="network" className="w-3.5 h-3.5" />
+            <span>Interactive REST Integration</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Live API Integration Lab
+          </h2>
+          <p className="text-slate-400 mt-4 text-base leading-relaxed">
+            Hands-on proof of API architecture skills. Select or configure an HTTP endpoint to test 
+            payload serialization, response headers, latency metrics, and JSON data pipelines in real time.
+          </p>
+        </div>
+
+        {/* Sandbox Interface Box */}
+        <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl space-y-6">
+          
+          {/* Quick Preset Badges */}
+          <div className="flex flex-wrap items-center gap-2 pb-4 border-b border-white/10">
+            <span className="text-xs font-mono text-slate-400 mr-2">Sample Endpoints:</span>
+            {sampleEndpoints.map((item, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleSelectSample(item)}
+                className={`px-3 py-1 rounded-lg text-xs font-mono border transition-all ${
+                  endpoint === item.url 
+                    ? 'bg-violet-600/30 border-violet-500/50 text-violet-300 shadow-sm' 
+                    : 'bg-slate-900/60 border-white/5 text-slate-400 hover:text-white'
+                }`}
+              >
+                <span className={`font-bold mr-1.5 ${item.method === 'GET' ? 'text-emerald-400' : 'text-amber-400'}`}>
+                  {item.method}
+                </span>
+                {item.name}
+              </button>
+            ))}
+          </div>
+
+          {/* URL & Method Input Bar */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <select
+              value={method}
+              onChange={(e) => setMethod(e.target.value)}
+              className="px-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs font-mono font-bold text-cyan-300 focus:outline-none focus:border-cyan-400"
+            >
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+            </select>
+
+            <div className="flex-1 flex items-center bg-slate-950 rounded-xl border border-white/10 px-3.5 py-1 focus-within:border-cyan-500/60 transition-colors">
+              <span className="text-xs font-mono text-slate-500 mr-1 select-none">https://api.abdullah.dev</span>
+              <input
+                type="text"
+                value={endpoint}
+                onChange={(e) => setEndpoint(e.target.value)}
+                className="w-full bg-transparent border-none text-xs font-mono text-slate-200 outline-none p-1.5 focus:ring-0"
+              />
+            </div>
+
+            <button
+              onClick={handleSendRequest}
+              disabled={isLoading}
+              className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold text-xs shadow-lg shadow-violet-500/25 transition-all disabled:opacity-50"
+            >
+              <Icon name={isLoading ? "loader" : "send"} className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
+              <span>{isLoading ? "Fetching..." : "Send Request"}</span>
+            </button>
+          </div>
+
+          {/* If POST: Show Request Body Editor */}
+          {method === "POST" && (
+            <div className="space-y-1.5 animate-fadeIn">
+              <label className="text-xs font-mono text-slate-400">Request Body (application/json):</label>
+              <textarea
+                rows="3"
+                value={requestBody}
+                onChange={(e) => setRequestBody(e.target.value)}
+                className="w-full bg-slate-950 border border-white/10 rounded-xl p-3 font-mono text-xs text-amber-300 outline-none focus:border-amber-400"
+              ></textarea>
+            </div>
+          )}
+
+          {/* Response Inspector */}
+          <div className="bg-slate-950 rounded-xl border border-white/10 overflow-hidden">
+            
+            {/* Response Meta Header */}
+            <div className="flex flex-wrap items-center justify-between px-4 py-2.5 bg-slate-900/90 border-b border-white/5 text-xs font-mono">
+              <div className="flex items-center gap-3">
+                <span className="text-slate-400">Response Status:</span>
+                <span className={`px-2 py-0.5 rounded font-bold ${
+                  response.status >= 200 && response.status < 300 
+                    ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' 
+                    : 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+                }`}>
+                  {response.status} {response.statusText}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4 text-slate-400">
+                <span className="flex items-center gap-1">
+                  <Icon name="clock" className="w-3.5 h-3.5 text-cyan-400" />
+                  Latency: <strong className="text-cyan-300">{response.latency}ms</strong>
+                </span>
+                <span className="flex items-center gap-1">
+                  <Icon name="shield-check" className="w-3.5 h-3.5 text-emerald-400" />
+                  CORS: OK
+                </span>
+              </div>
+            </div>
+
+            {/* JSON Response Body */}
+            <div className="p-4 overflow-x-auto max-h-72">
+              <pre className="text-xs font-mono text-cyan-300 leading-relaxed">
+                <code>{JSON.stringify(response.data, null, 2)}</code>
+              </pre>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+window.ApiSandbox = ApiSandbox;
+
+
+// --- Projects.js ---
+// Filterable Projects Component with Interactive Architecture Modal
+
+
+function Projects() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [activeModalProject, setActiveModalProject] = useState(null);
+
+  const categories = ["All", "DSA & Algorithms", "Fullstack & Angular", "C++ & Systems", "Python & APIs"];
+  const allProjects = window.PORTFOLIO_DATA.projects;
+
+  const filteredProjects = selectedCategory === "All"
+    ? allProjects
+    : allProjects.filter(p => p.category === selectedCategory);
+
+  const handleFilterChange = (cat) => {
+    window.soundManager.playClick();
+    setSelectedCategory(cat);
+  };
+
+  const handleOpenModal = (project) => {
+    window.soundManager.playClick();
+    setActiveModalProject(project);
+  };
+
+  return (
+    <section id="projects" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono mb-4">
+            <Icon name="folder-git-2" className="w-3.5 h-3.5" />
+            <span>Featured Portfolio Work</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Applied Engineering & Projects
+          </h2>
+          <p className="text-slate-400 mt-4 text-base leading-relaxed">
+            Real implementations bridging low-level computational efficiency in C++ and Python 
+            with modern reactive applications in Angular, TypeScript, and SQL.
+          </p>
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => handleFilterChange(cat)}
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                selectedCategory === cat
+                  ? 'bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg shadow-indigo-500/20 scale-105'
+                  : 'glass-panel text-slate-400 hover:text-white hover:border-white/20'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((proj) => (
+            <div
+              key={proj.id}
+              className="glass-panel rounded-2xl p-6 border border-white/10 hover:border-indigo-500/40 transition-all duration-300 flex flex-col justify-between group"
+            >
+              <div>
+                {/* Card Header: Badge & Category */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+                    {proj.badge}
+                  </span>
+                  <span className="text-[11px] font-mono text-slate-400">
+                    {proj.category}
+                  </span>
+                </div>
+
+                {/* Title & Tagline */}
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                  {proj.title}
+                </h3>
+                <p className="text-xs font-medium text-indigo-400 mt-1 mb-3">
+                  {proj.tagline}
+                </p>
+
+                {/* Description */}
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  {proj.description}
+                </p>
+
+                {/* Highlights List */}
+                <ul className="space-y-1.5 mb-5 border-t border-white/5 pt-3">
+                  {proj.highlights.map((h, hIdx) => (
+                    <li key={hIdx} className="text-[11px] text-slate-400 flex items-start gap-2">
+                      <span className="text-cyan-400 font-bold mt-0.5">•</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                {/* Tech Stack Pills */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {proj.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-0.5 rounded-md text-[10px] font-mono bg-slate-800/80 text-slate-300 border border-white/5"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Card Actions */}
+                <div className="flex items-center justify-between pt-3 border-t border-white/10">
+                  <button
+                    onClick={() => handleOpenModal(proj)}
+                    className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    <Icon name="info" className="w-3.5 h-3.5" />
+                    <span>Architecture Details</span>
+                  </button>
+
+                  <div className="flex items-center gap-2">
+                    {proj.demo.startsWith("#") ? (
+                      <a
+                        href={proj.demo}
+                        onClick={() => window.soundManager.playClick()}
+                        className="px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-300 text-xs font-mono border border-indigo-500/30 flex items-center gap-1 transition-all"
+                      >
+                        <Icon name="play" className="w-3 h-3" />
+                        <span>Live Lab</span>
+                      </a>
+                    ) : (
+                      <a
+                        href={proj.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                      >
+                        <Icon name="external-link" className="w-4 h-4" />
+                      </a>
+                    )}
+
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      title="View GitHub Repository"
+                      className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                    >
+                      <Icon name="github" className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Project Architecture Deep-Dive Modal */}
+        {activeModalProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+            <div className="glass-panel rounded-2xl max-w-2xl w-full border border-indigo-500/30 shadow-2xl overflow-hidden animate-scaleUp">
+              
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-6 py-4 bg-slate-900/90 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                  <h4 className="font-bold text-slate-100 text-base">
+                    {activeModalProject.title}
+                  </h4>
+                </div>
+                <button
+                  onClick={() => {
+                    window.soundManager.playClick();
+                    setActiveModalProject(null);
+                  }}
+                  className="p-1 rounded text-slate-400 hover:text-white hover:bg-white/10"
+                >
+                  <Icon name="x" className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+                <div>
+                  <span className="text-xs font-mono text-cyan-400 font-semibold">
+                    Core Technical Concept:
+                  </span>
+                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                    {activeModalProject.description}
+                  </p>
+                </div>
+
+                {/* Architecture Diagram Representation */}
+                <div className="bg-slate-950 p-4 rounded-xl border border-white/10 space-y-2">
+                  <span className="text-[11px] font-mono text-slate-400">
+                    System Architecture & Data Flow:
+                  </span>
+                  <div className="p-3 bg-slate-900/70 rounded-lg border border-white/5 font-mono text-[11px] text-emerald-300 leading-relaxed overflow-x-auto">
+                    [Client Request / UI] ──&gt; [Controller / Routing] ──&gt; [Data Structures &amp; Engine] ──&gt; [Normalized SQL / Cache Store]
+                  </div>
+                </div>
+
+                <div>
+                  <span className="text-xs font-mono text-indigo-400 font-semibold">
+                    Key Implementation Challenges Solved:
+                  </span>
+                  <ul className="mt-2 space-y-1.5">
+                    {activeModalProject.highlights.map((h, i) => (
+                      <li key={i} className="text-xs text-slate-300 flex items-start gap-2">
+                        <Icon name="check-circle-2" className="w-3.5 h-3.5 text-emerald-400 mt-0.5" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-2">
+                  <span className="text-xs font-mono text-slate-400">Technologies Employed:</span>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {activeModalProject.techStack.map(t => (
+                      <span key={t} className="px-2.5 py-1 rounded bg-slate-800 text-cyan-300 text-xs font-mono border border-white/5">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="px-6 py-3 bg-slate-900/60 border-t border-white/10 flex justify-end">
+                <button
+                  onClick={() => {
+                    window.soundManager.playClick();
+                    setActiveModalProject(null);
+                  }}
+                  className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold"
+                >
+                  Close Specification
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
+
+      </div>
+    </section>
+  );
+}
+
+window.Projects = Projects;
+
+
+// --- Timeline.js ---
+// Academic & Engineering Milestones Timeline Component
+function Timeline() {
+  const items = window.PORTFOLIO_DATA.timeline;
+
+  return (
+    <section id="timeline" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-4">
+            <Icon name="milestone" className="w-3.5 h-3.5" />
+            <span>Academic Progression</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Curriculum & Engineering Milestones
+          </h2>
+          <p className="text-slate-400 mt-4 text-base leading-relaxed">
+            A transparent timeline of my university computer science journey, detailing completed domains, 
+            current 3rd semester mastery, and upcoming specializations.
+          </p>
+        </div>
+
+        {/* Timeline Line & Nodes */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical central bar */}
+          <div className="absolute top-0 bottom-0 left-4 sm:left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-indigo-500 via-cyan-500 to-slate-800"></div>
+
+          <div className="space-y-12">
+            {items.map((item, idx) => {
+              const isEven = idx % 2 === 0;
+              const isCurrent = item.badge === "In Progress";
+
+              return (
+                <div 
+                  key={idx} 
+                  className={`relative flex flex-col sm:flex-row items-start ${
+                    isEven ? 'sm:flex-row-reverse' : ''
+                  }`}
+                >
+                  
+                  {/* Timeline Node Icon in Center */}
+                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 border-2 border-cyan-400 z-20 shadow-lg shadow-cyan-500/30">
+                    {isCurrent ? (
+                      <span className="w-3 h-3 rounded-full bg-cyan-400 status-dot-pulse"></span>
+                    ) : (
+                      <Icon name="check" className="w-4 h-4 text-emerald-400" />
+                    )}
+                  </div>
+
+                  {/* Content Card */}
+                  <div className={`ml-12 sm:ml-0 sm:w-1/2 ${
+                    isEven ? 'sm:pl-10' : 'sm:pr-10'
+                  }`}>
+                    <div className={`glass-panel rounded-2xl p-6 border transition-all ${
+                      isCurrent 
+                        ? 'border-cyan-500/50 shadow-cyan-500/10' 
+                        : 'border-white/10 hover:border-white/20'
+                    }`}>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-bold text-lg text-white">
+                          {item.semester}
+                        </span>
+                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold ${
+                          isCurrent 
+                            ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40' 
+                            : 'bg-slate-800 text-slate-400 border border-white/5'
+                        }`}>
+                          {item.badge}
+                        </span>
+                      </div>
+
+                      <div className="text-xs font-medium text-indigo-400 font-mono mb-3">
+                        {item.period}
+                      </div>
+
+                      <ul className="space-y-2">
+                        {item.highlights.map((h, hIdx) => (
+                          <li key={hIdx} className="text-xs text-slate-300 flex items-start gap-2 leading-relaxed">
+                            <span className="text-cyan-400 font-bold mt-0.5">›</span>
+                            <span>{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+window.Timeline = Timeline;
+
+
+// --- Contact.js ---
+// Contact Component with Interactive Form Validation and Toast Notifications
+
+
+function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const emailAddress = window.PORTFOLIO_DATA.personal.email;
+  const phoneNumber = window.PORTFOLIO_DATA.personal.phone || "03138977582";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(emailAddress);
+    window.soundManager.playSuccess();
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(phoneNumber);
+    window.soundManager.playSuccess();
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
+  };
+
+  const validate = () => {
+    const errs = {};
+    if (!formData.name.trim()) errs.name = "Please enter your name";
+    if (!formData.email.trim()) {
+      errs.email = "Please enter your email";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errs.email = "Please provide a valid email address";
+    }
+    if (!formData.subject.trim()) errs.subject = "Please enter a subject";
+    if (!formData.message.trim() || formData.message.length < 10) {
+      errs.message = "Message must be at least 10 characters long";
+    }
+    setErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.soundManager.playClick();
+
+    if (!validate()) {
+      window.soundManager.playBeep(240, 0.15, 'sawtooth');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      window.soundManager.playSuccess();
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSubmitted(false), 6000);
+    }, 600);
+  };
+
+  return (
+    <section id="contact" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
+            <Icon name="mail" className="w-3.5 h-3.5" />
+            <span>Get in Touch</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Let's Connect & Collaborate
+          </h2>
+          <p className="text-slate-400 mt-4 text-base leading-relaxed">
+            Interested in discussing software engineering, 3rd semester collaboration, internship opportunities, 
+            or algorithmic problem solving? Send a message directly below.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          {/* Left Column: Quick Contact & Info Cards */}
+          <div className="lg:col-span-5 space-y-6">
+            
+            {/* Direct Email & Phone Cards */}
+            <div className="glass-panel rounded-2xl p-6 border border-white/10 space-y-4">
+              <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider">
+                Direct Contact
+              </span>
+              
+              {/* Email Item */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-white/5">
+                <div className="flex items-center gap-2.5 overflow-hidden">
+                  <Icon name="mail" className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                  <span className="text-xs font-mono text-slate-200 truncate">
+                    {emailAddress}
+                  </span>
+                </div>
+                <button
+                  onClick={handleCopyEmail}
+                  className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-300 border border-indigo-500/40 text-xs font-mono transition-all flex-shrink-0"
+                >
+                  <Icon name={copiedEmail ? "check" : "copy"} className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>{copiedEmail ? "Copied!" : "Copy Email"}</span>
+                </button>
+              </div>
+
+              {/* Phone Item */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-white/5">
+                <div className="flex items-center gap-2.5 overflow-hidden">
+                  <Icon name="phone" className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <a href={`tel:${phoneNumber}`} className="text-xs font-mono text-slate-200 hover:text-emerald-300 transition-colors">
+                    {phoneNumber}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <button
+                    onClick={handleCopyPhone}
+                    className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-300 border border-emerald-500/40 text-xs font-mono transition-all"
+                  >
+                    <Icon name={copiedPhone ? "check" : "copy"} className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>{copiedPhone ? "Copied!" : "Copy"}</span>
+                  </button>
+                  <a
+                    href={`tel:${phoneNumber}`}
+                    className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-white/5 transition-colors"
+                    title="Call Now"
+                  >
+                    <Icon name="phone-call" className="w-3.5 h-3.5 text-emerald-400" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="pt-2 flex items-center gap-2 text-xs font-mono text-slate-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 status-dot-pulse"></span>
+                <span>Response time: Usually &lt; 24 hours</span>
+              </div>
+            </div>
+
+            {/* Social Channels Card */}
+            <div className="glass-panel rounded-2xl p-6 border border-white/10 space-y-4">
+              <span className="text-xs font-mono text-indigo-400 uppercase tracking-wider">
+                Profiles & Coding Hubs
+              </span>
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href={window.PORTFOLIO_DATA.personal.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => window.soundManager.playClick()}
+                  className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-white/5 hover:border-white/20 text-slate-200 transition-all text-xs font-medium"
+                >
+                  <Icon name="github" className="w-4 h-4 text-cyan-400" />
+                  <span>GitHub</span>
+                </a>
+
+                <a
+                  href={window.PORTFOLIO_DATA.personal.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => window.soundManager.playClick()}
+                  className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-white/5 hover:border-white/20 text-slate-200 transition-all text-xs font-medium"
+                >
+                  <Icon name="linkedin" className="w-4 h-4 text-blue-400" />
+                  <span>LinkedIn</span>
+                </a>
+
+                <a
+                  href={window.PORTFOLIO_DATA.personal.leetcode}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => window.soundManager.playClick()}
+                  className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-white/5 hover:border-white/20 text-slate-200 transition-all text-xs font-medium"
+                >
+                  <Icon name="code" className="w-4 h-4 text-amber-400" />
+                  <span>LeetCode</span>
+                </a>
+
+                <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-white/5 text-slate-200 text-xs font-medium">
+                  <Icon name="map-pin" className="w-4 h-4 text-rose-400" />
+                  <span>Remote / Global</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right Column: Interactive Form */}
+          <div className="lg:col-span-7 glass-panel rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl relative">
+            
+            {submitted && (
+              <div className="mb-6 p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-center gap-3 animate-fadeIn">
+                <Icon name="check-circle" className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                <div>
+                  <span className="font-bold">Transmission Received!</span>
+                  <p className="text-emerald-200/80 mt-0.5">
+                    Thank you for reaching out. Your message has been noted and I will reply promptly!
+                  </p>
+                </div>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                    Your Name <span className="text-rose-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Alex Mercer"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className={`w-full px-4 py-2.5 rounded-xl bg-slate-950 border text-xs text-slate-100 outline-none transition-colors ${
+                      errors.name ? 'border-rose-500' : 'border-white/10 focus:border-cyan-500'
+                    }`}
+                  />
+                  {errors.name && (
+                    <p className="text-[11px] text-rose-400 mt-1">{errors.name}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                    Your Email <span className="text-rose-400">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="alex@company.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className={`w-full px-4 py-2.5 rounded-xl bg-slate-950 border text-xs text-slate-100 outline-none transition-colors ${
+                      errors.email ? 'border-rose-500' : 'border-white/10 focus:border-cyan-500'
+                    }`}
+                  />
+                  {errors.email && (
+                    <p className="text-[11px] text-rose-400 mt-1">{errors.email}</p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                  Subject <span className="text-rose-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Software Internship / Project Collaboration"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className={`w-full px-4 py-2.5 rounded-xl bg-slate-950 border text-xs text-slate-100 outline-none transition-colors ${
+                    errors.subject ? 'border-rose-500' : 'border-white/10 focus:border-cyan-500'
+                  }`}
+                />
+                {errors.subject && (
+                  <p className="text-[11px] text-rose-400 mt-1">{errors.subject}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                  Message <span className="text-rose-400">*</span>
+                </label>
+                <textarea
+                  rows="4"
+                  placeholder="Share a brief overview of your team, project, or what you'd like to collaborate on..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className={`w-full px-4 py-2.5 rounded-xl bg-slate-950 border text-xs text-slate-100 outline-none transition-colors resize-none ${
+                    errors.message ? 'border-rose-500' : 'border-white/10 focus:border-cyan-500'
+                  }`}
+                ></textarea>
+                {errors.message && (
+                  <p className="text-[11px] text-rose-400 mt-1">{errors.message}</p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:opacity-95 text-white font-semibold text-xs shadow-lg shadow-indigo-500/25 transition-all flex items-center justify-center gap-2"
+              >
+                <Icon name={isSubmitting ? "loader" : "send"} className={`w-4 h-4 ${isSubmitting ? 'animate-spin' : ''}`} />
+                <span>{isSubmitting ? "Transmitting..." : "Send Message"}</span>
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+window.Contact = Contact;
+
+
+// --- Footer.js ---
+// Footer Component
+function Footer() {
+  const scrollToTop = () => {
+    window.soundManager.playClick();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <footer className="border-t border-white/10 bg-slate-950/80 py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          {/* Logo & Tagline */}
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-400 p-[1px]">
+              <div className="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center font-mono font-bold text-xs text-cyan-300">
+                AP
+              </div>
+            </div>
+            <div>
+              <span className="text-sm font-bold text-slate-100">Abdullah Pervaiz</span>
+              <p className="text-[11px] text-slate-400 font-mono">
+                Computer Science & Engineering • Semester 3
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Anchor Links */}
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+            <a href="#about" className="hover:text-white transition-colors">About</a>
+            <a href="#skills" className="hover:text-white transition-colors">Skills</a>
+            <a href="#visualizer" className="hover:text-white transition-colors">DSA Lab</a>
+            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+            <a href="#api-sandbox" className="hover:text-white transition-colors">API Lab</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          </div>
+
+          {/* Back to Top */}
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 hover:border-cyan-500/40 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all"
+            title="Scroll back to top"
+          >
+            <span>Top</span>
+            <Icon name="arrow-up" className="w-3.5 h-3.5" />
+          </button>
+
+        </div>
+
+        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+          <span>
+            © {new Date().getFullYear()} Abdullah Pervaiz. Built with React, Tailwind & Pure Algorithms.
+          </span>
+          <div className="flex items-center gap-4 text-[11px] font-mono">
+            <span>C++</span>
+            <span>•</span>
+            <span>Python</span>
+            <span>•</span>
+            <span>DSA</span>
+            <span>•</span>
+            <span>TypeScript</span>
+            <span>•</span>
+            <span>Angular</span>
+            <span>•</span>
+            <span>SQL</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+window.Footer = Footer;
+
+
+// --- app.js ---
+// Main React Application Root Component
+
+
+function App() {
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(false);
+
+  // Initialize Canvas constellation and Lucide icons
+  useEffect(() => {
+    const cleanupCanvas = window.initCanvasBackground ? window.initCanvasBackground("bg-canvas") : null;
+    
+    // Refresh icons whenever DOM updates
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+
+    return () => {
+      if (cleanupCanvas) cleanupCanvas();
+    };
+  }, []);
+
+  // Update lucide icons when modals or state changes
+  useEffect(() => {
+    if (window.lucide) {
+      setTimeout(() => window.lucide.createIcons(), 50);
+    }
+  }, [isTerminalOpen, soundEnabled]);
+
+  const handleToggleSound = () => {
+    const newState = window.soundManager.toggle();
+    setSoundEnabled(newState);
+  };
+
+  const handleOpenTerminal = () => {
+    setIsTerminalOpen(true);
+  };
+
+  const handleCloseTerminal = () => {
+    setIsTerminalOpen(false);
+  };
+
+  return (
+    <div className="min-h-screen text-slate-100 relative cyber-grid">
+      
+      {/* Background Interactive Particle Canvas */}
+      <canvas
+        id="bg-canvas"
+        className="fixed inset-0 pointer-events-auto z-0 opacity-80"
+      ></canvas>
+
+      {/* Foreground Content Stack */}
+      <div className="relative z-10 flex flex-col">
+        {/* Navigation Bar */}
+        <Navbar
+          soundEnabled={soundEnabled}
+          onToggleSound={handleToggleSound}
+          onOpenTerminal={handleOpenTerminal}
+        />
+
+        {/* Hero Section */}
+        <Hero onOpenTerminal={handleOpenTerminal} />
+
+        {/* About Section */}
+        <About />
+
+        {/* Skills with Code Peek */}
+        <Skills />
+
+        {/* Playable DSA Visualizer Lab */}
+        <DsaVisualizer />
+
+        {/* Projects Gallery */}
+        <Projects />
+
+        {/* Interactive API Lab */}
+        <ApiSandbox />
+
+        {/* Timeline Progression */}
+        <Timeline />
+
+        {/* Contact Form */}
+        <Contact />
+
+        {/* Footer */}
+        <Footer />
+      </div>
+
+      {/* Floating Developer CLI Terminal Modal */}
+      <Terminal
+        isOpen={isTerminalOpen}
+        onClose={handleCloseTerminal}
+      />
+
+    </div>
+  );
+}
+
+// Mount the React Application into the DOM
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement);
+root.render(<App />);
+
+  </script>
+
+</body>
+</html>

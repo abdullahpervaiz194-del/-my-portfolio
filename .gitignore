@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Environment & local configurations
+.env
+.env.local
+.env.*.local
+
+# Build & temporary outputs
+dist/
+build/
+.cache/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
