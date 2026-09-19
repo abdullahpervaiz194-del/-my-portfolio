@@ -8,7 +8,7 @@ A dark-mode glassmorphic developer portfolio built with **React**, **Tailwind CS
 
 ## 🚀 Live Demo & Repository
 - **GitHub Profile**: [github.com/abdullahpervaiz194-del](https://github.com/abdullahpervaiz194-del/)
-- **Repository**: [github.com/abdullahpervaiz194-del/my-new-website](https://github.com/abdullahpervaiz194-del/my-new-website)
+- **Repository**: [github.com/abdullahpervaiz194-del/-my-portfolio](https://github.com/abdullahpervaiz194-del/-my-portfolio)
 - **LinkedIn**: [linkedin.com/in/abdullah-pervaiz-2b95902ab](https://www.linkedin.com/in/abdullah-pervaiz-2b95902ab)
 - **Contact**: `abdullahpervaiz194@gmail.com` | `03138977582`
 
@@ -71,8 +71,8 @@ Simply double-click `index.html` to open it in Chrome, Edge, or Firefox.
 ### Option 3: Terminal Command
 ```bash
 # Clone the repository
-git clone https://github.com/abdullahpervaiz194-del/my-new-website.git
-cd my-new-website
+git clone https://github.com/abdullahpervaiz194-del/-my-portfolio.git
+cd -my-portfolio
 
 # Start local server
 python -m http.server 3000
