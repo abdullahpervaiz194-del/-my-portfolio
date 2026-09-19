@@ -16,7 +16,7 @@ function ApiSandbox() {
       "cache-control": "max-age=3600"
     },
     data: {
-      student: "Muhammad Shahzad",
+      student: "Abdullah Pervaiz",
       semester: 3,
       program: "Computer Science & Engineering",
       coreStack: ["Python", "C++", "DSA", "TypeScript", "Angular", "SQL", "APIs"],
@@ -41,7 +41,7 @@ function ApiSandbox() {
       name: "C++ In-Memory Cache Query",
       method: "POST",
       url: "/api/v1/cache/lookup",
-      body: '{\n  "key": "user:shahzad:session",\n  "evictionPolicy": "LRU"\n}'
+      body: '{\n  "key": "user:abdullah:session",\n  "evictionPolicy": "LRU"\n}'
     },
     {
       name: "SQL Analytics Aggregator",
@@ -70,7 +70,7 @@ function ApiSandbox() {
 
       if (endpoint.includes("profile")) {
         resData = {
-          student: "Muhammad Shahzad",
+          student: "Abdullah Pervaiz",
           semester: 3,
           major: "Computer Science",
           skills: ["Python", "C++", "DSA", "TypeScript", "Angular", "SQL", "APIs"],
@@ -181,7 +181,7 @@ function ApiSandbox() {
             </select>
 
             <div className="flex-1 flex items-center bg-slate-950 rounded-xl border border-white/10 px-3.5 py-1 focus-within:border-cyan-500/60 transition-colors">
-              <span className="text-xs font-mono text-slate-500 mr-1 select-none">https://api.shahzad.dev</span>
+              <span className="text-xs font-mono text-slate-500 mr-1 select-none">https://api.abdullah.dev</span>
               <input
                 type="text"
                 value={endpoint}

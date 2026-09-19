@@ -1,6 +1,6 @@
-# ⚡ Muhammad Shahzad — Modern Interactive Developer Portfolio
+# ⚡ Abdullah Pervaiz — Modern Interactive Developer Portfolio
 
-A dark-mode glassmorphic developer portfolio built with **React**, **Tailwind CSS**, and **JavaScript**, customized for **Muhammad Shahzad** — a 3rd-semester Computer Science undergraduate specializing in **Python, DSA, C++, TypeScript, SQL, HTML/CSS, Angular Framework, Firebase, and API Integration**.
+A dark-mode glassmorphic developer portfolio built with **React**, **Tailwind CSS**, and **JavaScript**, customized for **Abdullah Pervaiz** — a 3rd-semester Computer Science undergraduate specializing in **Python, DSA, C++, TypeScript, SQL, HTML/CSS, Angular Framework, Firebase, and API Integration**.
 
 ![Portfolio Preview Banner](https://raw.githubusercontent.com/abdullahpervaiz194-del/my-new-website/main/preview.png)
 
@@ -10,7 +10,7 @@ A dark-mode glassmorphic developer portfolio built with **React**, **Tailwind CS
 - **GitHub Profile**: [github.com/abdullahpervaiz194-del](https://github.com/abdullahpervaiz194-del/)
 - **Repository**: [github.com/abdullahpervaiz194-del/-my-portfolio](https://github.com/abdullahpervaiz194-del/-my-portfolio)
 - **LinkedIn**: [linkedin.com/in/abdullah-pervaiz-2b95902ab](https://www.linkedin.com/in/abdullah-pervaiz-2b95902ab)
-- **Contact**: `muhammadshahzadahmed679@gmail.com` | `03199554837`
+- **Contact**: `abdullahpervaiz194@gmail.com` | `03138977582`
 
 ---
 
@@ -86,4 +86,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-Developed by **Muhammad Shahzad** • 3rd Semester Computer Science Undergrad
+Developed by **Abdullah Pervaiz** • 3rd Semester Computer Science Undergrad

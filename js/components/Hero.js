@@ -64,7 +64,7 @@ function Hero({ onOpenTerminal }) {
             {/* Main Headline */}
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-300 to-cyan-300">Muhammad Shahzad</span>
+                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-300 to-cyan-300">Abdullah Pervaiz</span>
               </h1>
               
               {/* Dynamic Subtitle with Terminal Cursor */}
@@ -147,7 +147,7 @@ function Hero({ onOpenTerminal }) {
                   <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
                   <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
                   <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                  <span className="font-mono text-slate-400 ml-2">shahzad_profile.cpp</span>
+                  <span className="font-mono text-slate-400 ml-2">abdullah_profile.cpp</span>
                 </div>
                 <div className="flex items-center gap-1.5 font-mono text-indigo-400 text-[11px]">
                   <span className="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
@@ -160,7 +160,7 @@ function Hero({ onOpenTerminal }) {
                 <code>
                   <span className="text-slate-500">// 3rd Semester Undergrad Profile</span>{'\n'}
                   <span className="text-purple-400">struct</span> <span className="text-yellow-300">Engineer</span> {'{'}{'\n'}
-                  {'  '}<span className="text-cyan-400">string</span> name = <span className="text-emerald-400">"Muhammad Shahzad"</span>;{'\n'}
+                  {'  '}<span className="text-cyan-400">string</span> name = <span className="text-emerald-400">"Abdullah Pervaiz"</span>;{'\n'}
                   {'  '}<span className="text-purple-400">int</span> semester = <span className="text-amber-300">3</span>;{'\n'}
                   {'  '}<span className="text-cyan-400">vector</span>&lt;<span className="text-cyan-400">string</span>&gt; coreStack = {'{'}{'\n'}
                   {'    '}<span className="text-emerald-400">"C++"</span>, <span className="text-emerald-400">"Python"</span>, <span className="text-emerald-400">"DSA"</span>,{'\n'}

@@ -10,7 +10,7 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const emailAddress = window.PORTFOLIO_DATA.personal.email;
-  const phoneNumber = window.PORTFOLIO_DATA.personal.phone || "03199554837";
+  const phoneNumber = window.PORTFOLIO_DATA.personal.phone || "03138977582";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);

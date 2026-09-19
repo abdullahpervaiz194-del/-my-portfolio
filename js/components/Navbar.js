@@ -41,12 +41,12 @@ function Navbar({ soundEnabled, onToggleSound, onOpenTerminal }) {
         >
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-500 to-cyan-400 p-[1.5px] shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-all duration-300">
             <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-              <span className="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-300 text-lg">MS</span>
+              <span className="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-300 text-lg">AP</span>
             </div>
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-slate-100 text-base tracking-tight group-hover:text-cyan-300 transition-colors">
-              Muhammad Shahzad
+              Abdullah Pervaiz
             </span>
             <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 status-dot-pulse"></span>
